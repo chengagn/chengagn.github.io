@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* 100%窗口宽高 */
+    min-height: 100vh;
+    /* 弹性布局 居中演示 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 选项卡 */
+.tabs .label{
+    /* 行内块元素 */
+    display: inline-block;
+    /* 相对定位 */
+    position: relative;
+}
+.tabs .label label{
+    width: 150px;
+    height: 40px;
+    /* 块元素 */
+    display: block;
+    /* 定义自定义属性 通过var进行调用 */
+    --color:#1fab8930;
+    background-color: var(--color);
+    border-radius: 10px 10px 0 0;
+    /* 设置旋转基点 */
+    transform-origin: center bottom;
+    /* 转换元素：视距100px 沿x轴旋转30度 */
+    transform: perspective(100px) rotateX(30deg);
+    cursor: pointer;
+}
+/* 左右两侧弧边的统一样式 */
+.tabs .label label::before,
+.tabs .label label::after{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color);
+    bottom: 0;
+}
+/* 左侧弧边 */
+.tabs .label label::before{
+    left: -10px;
+    /* 通过径向渐变实现弧边 */
+    background: radial-gradient(circle at 0 0,transparent 10px,var(--color) 10px);
+}
+/* 右侧弧边 */
+.tabs .label label::after{
+    right: -10px;
+    background: radial-gradient(circle at 10px 0,transparent 10px,var(--color) 10px);
+}
+/* 选项卡文本 */
+.tabs .label span{
+    /* 绝对定位 */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 26px;
+    text-align: center;
+    /* 元素不对鼠标事件做出反应（穿透元素） */
+    pointer-events: none;
+}
+/* 选项卡面板 */
+.tabs .panels{
+    margin-top: -4px;
+    margin-left: -10px;
+}
+.tabs .panel{
+    width: 475px;
+    height: 300px;
+    border: 2px solid #1fab89;
+    border-radius: 4px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+/* 通过隐藏的单选按钮控制选项卡、面板的切换 */
+#label1:checked ~ .label:nth-of-type(1) label,
+#label2:checked ~ .label:nth-of-type(2) label,
+#label3:checked ~ .label:nth-of-type(3) label{
+    --color:#1fab89;
+    z-index: 1;
+}
+#label1:checked ~ .label:nth-of-type(1) span,
+#label2:checked ~ .label:nth-of-type(2) span,
+#label3:checked ~ .label:nth-of-type(3) span{
+    color:#fff;
+    z-index: 2;
+}
+#label1:checked ~ .panels .panel:nth-of-type(1),
+#label2:checked ~ .panels .panel:nth-of-type(2),
+#label3:checked ~ .panels .panel:nth-of-type(3){
+    display: flex;
+}

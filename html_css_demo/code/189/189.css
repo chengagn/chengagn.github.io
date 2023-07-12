@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* 100%窗口宽高 */
+    height: 100vh;
+    /* 弹性布局 水平+垂直居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 渐变背景 */
+    background: linear-gradient(to top,#c1dfc4,#deecdd);
+}
+.container{
+    width: 681px;
+    height: 384px;
+    /* 阴影 */
+    box-shadow: 0 0 50px rgba(0,0,0,0.25);
+    /* 相对定位 */
+    position: relative;
+    /* 溢出隐藏 */
+    overflow: hidden;
+}
+.slider{
+    /* 绝对定位 */
+    position: absolute;
+    width: 400%;
+    height: 100%;
+    display: inline-flex;
+    overflow: hidden;
+}
+svg{
+    width: 681px;
+    height: 384px;
+    position: absolute;
+    /* 设置堆叠顺序 */
+    z-index: 3;
+}
+/* 左右按钮的统一样式 */
+.btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #949494;
+    color: #949494;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+    /* 垂直居中 */
+    position: absolute;
+    top: 50%;
+    z-index: 4;
+    transform: translateY(-50%);
+    cursor: pointer;
+    /* 设置过渡效果 */
+    transition: 0.5s;
+}
+.btn:hover{
+    background-color: #c1dfc4;
+}
+.btn.btn-left{
+    left: 13px;
+}
+.btn.btn-right{
+    left: 628px;
+}
+/* 波浪圆圈 */
+circle{
+    /* 取消填充 */
+    fill: none;
+    /* 定义一条浅绿色的线 */
+    stroke: #c1dfc4;
+    /* 线的厚度 */
+    stroke-width: 0;
+    /* 设置过渡动画时长 */
+    transition: 0.3s;
+    /* 设置过渡动画为线性动画 */
+    transition-timing-function: linear;
+}
+.svg1 .circle1,
+.svg2 .circle1{
+    transition-delay: 0.05s;
+}
+.svg1 .circle2,
+.svg2 .circle2{
+    transition-delay: 0.1s;
+}
+.svg1 .circle3,
+.svg2 .circle3{
+    transition-delay: 0.15s;
+}
+.svg1 .circle4,
+.svg2 .circle4{
+    transition-delay: 0.2s;
+}
+.svg1 .circle5,
+.svg2 .circle5{
+    transition-delay: 0.25s;
+}
+.svg1 .circle6,
+.svg2 .circle6{
+    transition-delay: 0.3s;
+}
+.svg1 .circle7,
+.svg2 .circle7{
+    transition-delay: 0.35s;
+}
+.svg1 .circle8,
+.svg2 .circle8{
+    transition-delay: 0.4s;
+}
+.svg1 .circle9,
+.svg2 .circle9{
+    transition-delay: 0.45s;
+}
+/* 焦点图的统一样式 */
+.slide{
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    width: 25%;
+    height: 100%;
+    z-index: 1;
+    transition: 1.4s;
+}
+/* 分别设置焦点图 */
+.slide1{
+    background-image: url('/images/op1/1.jpg');
+}
+.slide2{
+    background-image: url('/images/op1/2.jpg');
+}
+.slide3{
+    background-image: url('/images/op1/3.jpg');
+}
+.slide4{
+    background-image: url('/images/op1/4.jpg');
+}
+/* 切换时图片放大 */
+.scale{
+    transform: scale(1.3);
+}
+/* 设置当前图的堆叠顺序 */
+.active{
+    z-index: 2;
+}
+/* 设置波浪圆圈的厚度 */
+.streak{
+    stroke-width: 82px;
+}

@@ -1,0 +1,397 @@
+/* VARIABLES */
+/*Should be the same as markup*/
+.container {
+  position: relative;
+  top: 100px;
+  margin: 0 auto;
+  width: 300px;
+  perspective: 400px;
+  transform-style: preserve-3d;
+  /*animation: camera 3s infinite alternate;*/
+}
+
+.cuboid {
+  position: relative;
+  height: 20px;
+  width: 200px;
+  padding-bottom: 10px;
+  transform-style: preserve-3d;
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  /* Cycle through cuboids, adding the staggers */
+  /* Cycle through cuboids, adding the staggers */
+  /* Cycle through cuboids, adding the staggers */
+  /* Cycle through cuboids, adding the staggers */
+  /* Cycle through cuboids, adding the staggers */
+  /* Cycle through cuboids, adding the staggers */
+  /* Cycle through cuboids, adding the staggers */
+  /* Cycle through cuboids, adding the staggers */
+  /* Cycle through cuboids, adding the staggers */
+  /* Cycle through cuboids, adding the staggers */
+  /* Cycle through cuboids, adding the staggers */
+  /* Cycle through cuboids, adding the staggers */
+  /* Cycle through cuboids, adding the staggers */
+  /* Cycle through cuboids, adding the staggers */
+  /* Cycle through cuboids, adding the staggers */
+}
+.cuboid:nth-child(1) {
+  /* Note the '- $duration' after the animation-delays
+   * This prevents planks being stationary at start
+   */
+  animation-delay: -1.9s;
+  /* Cycle through faces adding color delays */
+}
+.cuboid:nth-child(1) div:nth-child(1) {
+  animation-delay: -3.4s;
+}
+.cuboid:nth-child(1) div:nth-child(2) {
+  animation-delay: -2.9s;
+}
+.cuboid:nth-child(1) div:nth-child(3) {
+  animation-delay: -2.4s;
+}
+.cuboid:nth-child(1) div:nth-child(4) {
+  animation-delay: -1.9s;
+}
+.cuboid:nth-child(2) {
+  /* Note the '- $duration' after the animation-delays
+   * This prevents planks being stationary at start
+   */
+  animation-delay: -1.8s;
+  /* Cycle through faces adding color delays */
+}
+.cuboid:nth-child(2) div:nth-child(1) {
+  animation-delay: -3.3s;
+}
+.cuboid:nth-child(2) div:nth-child(2) {
+  animation-delay: -2.8s;
+}
+.cuboid:nth-child(2) div:nth-child(3) {
+  animation-delay: -2.3s;
+}
+.cuboid:nth-child(2) div:nth-child(4) {
+  animation-delay: -1.8s;
+}
+.cuboid:nth-child(3) {
+  /* Note the '- $duration' after the animation-delays
+   * This prevents planks being stationary at start
+   */
+  animation-delay: -1.7s;
+  /* Cycle through faces adding color delays */
+}
+.cuboid:nth-child(3) div:nth-child(1) {
+  animation-delay: -3.2s;
+}
+.cuboid:nth-child(3) div:nth-child(2) {
+  animation-delay: -2.7s;
+}
+.cuboid:nth-child(3) div:nth-child(3) {
+  animation-delay: -2.2s;
+}
+.cuboid:nth-child(3) div:nth-child(4) {
+  animation-delay: -1.7s;
+}
+.cuboid:nth-child(4) {
+  /* Note the '- $duration' after the animation-delays
+   * This prevents planks being stationary at start
+   */
+  animation-delay: -1.6s;
+  /* Cycle through faces adding color delays */
+}
+.cuboid:nth-child(4) div:nth-child(1) {
+  animation-delay: -3.1s;
+}
+.cuboid:nth-child(4) div:nth-child(2) {
+  animation-delay: -2.6s;
+}
+.cuboid:nth-child(4) div:nth-child(3) {
+  animation-delay: -2.1s;
+}
+.cuboid:nth-child(4) div:nth-child(4) {
+  animation-delay: -1.6s;
+}
+.cuboid:nth-child(5) {
+  /* Note the '- $duration' after the animation-delays
+   * This prevents planks being stationary at start
+   */
+  animation-delay: -1.5s;
+  /* Cycle through faces adding color delays */
+}
+.cuboid:nth-child(5) div:nth-child(1) {
+  animation-delay: -3s;
+}
+.cuboid:nth-child(5) div:nth-child(2) {
+  animation-delay: -2.5s;
+}
+.cuboid:nth-child(5) div:nth-child(3) {
+  animation-delay: -2s;
+}
+.cuboid:nth-child(5) div:nth-child(4) {
+  animation-delay: -1.5s;
+}
+.cuboid:nth-child(6) {
+  /* Note the '- $duration' after the animation-delays
+   * This prevents planks being stationary at start
+   */
+  animation-delay: -1.4s;
+  /* Cycle through faces adding color delays */
+}
+.cuboid:nth-child(6) div:nth-child(1) {
+  animation-delay: -2.9s;
+}
+.cuboid:nth-child(6) div:nth-child(2) {
+  animation-delay: -2.4s;
+}
+.cuboid:nth-child(6) div:nth-child(3) {
+  animation-delay: -1.9s;
+}
+.cuboid:nth-child(6) div:nth-child(4) {
+  animation-delay: -1.4s;
+}
+.cuboid:nth-child(7) {
+  /* Note the '- $duration' after the animation-delays
+   * This prevents planks being stationary at start
+   */
+  animation-delay: -1.3s;
+  /* Cycle through faces adding color delays */
+}
+.cuboid:nth-child(7) div:nth-child(1) {
+  animation-delay: -2.8s;
+}
+.cuboid:nth-child(7) div:nth-child(2) {
+  animation-delay: -2.3s;
+}
+.cuboid:nth-child(7) div:nth-child(3) {
+  animation-delay: -1.8s;
+}
+.cuboid:nth-child(7) div:nth-child(4) {
+  animation-delay: -1.3s;
+}
+.cuboid:nth-child(8) {
+  /* Note the '- $duration' after the animation-delays
+   * This prevents planks being stationary at start
+   */
+  animation-delay: -1.2s;
+  /* Cycle through faces adding color delays */
+}
+.cuboid:nth-child(8) div:nth-child(1) {
+  animation-delay: -2.7s;
+}
+.cuboid:nth-child(8) div:nth-child(2) {
+  animation-delay: -2.2s;
+}
+.cuboid:nth-child(8) div:nth-child(3) {
+  animation-delay: -1.7s;
+}
+.cuboid:nth-child(8) div:nth-child(4) {
+  animation-delay: -1.2s;
+}
+.cuboid:nth-child(9) {
+  /* Note the '- $duration' after the animation-delays
+   * This prevents planks being stationary at start
+   */
+  animation-delay: -1.1s;
+  /* Cycle through faces adding color delays */
+}
+.cuboid:nth-child(9) div:nth-child(1) {
+  animation-delay: -2.6s;
+}
+.cuboid:nth-child(9) div:nth-child(2) {
+  animation-delay: -2.1s;
+}
+.cuboid:nth-child(9) div:nth-child(3) {
+  animation-delay: -1.6s;
+}
+.cuboid:nth-child(9) div:nth-child(4) {
+  animation-delay: -1.1s;
+}
+.cuboid:nth-child(10) {
+  /* Note the '- $duration' after the animation-delays
+   * This prevents planks being stationary at start
+   */
+  animation-delay: -1s;
+  /* Cycle through faces adding color delays */
+}
+.cuboid:nth-child(10) div:nth-child(1) {
+  animation-delay: -2.5s;
+}
+.cuboid:nth-child(10) div:nth-child(2) {
+  animation-delay: -2s;
+}
+.cuboid:nth-child(10) div:nth-child(3) {
+  animation-delay: -1.5s;
+}
+.cuboid:nth-child(10) div:nth-child(4) {
+  animation-delay: -1s;
+}
+.cuboid:nth-child(11) {
+  /* Note the '- $duration' after the animation-delays
+   * This prevents planks being stationary at start
+   */
+  animation-delay: -0.9s;
+  /* Cycle through faces adding color delays */
+}
+.cuboid:nth-child(11) div:nth-child(1) {
+  animation-delay: -2.4s;
+}
+.cuboid:nth-child(11) div:nth-child(2) {
+  animation-delay: -1.9s;
+}
+.cuboid:nth-child(11) div:nth-child(3) {
+  animation-delay: -1.4s;
+}
+.cuboid:nth-child(11) div:nth-child(4) {
+  animation-delay: -0.9s;
+}
+.cuboid:nth-child(12) {
+  /* Note the '- $duration' after the animation-delays
+   * This prevents planks being stationary at start
+   */
+  animation-delay: -0.8s;
+  /* Cycle through faces adding color delays */
+}
+.cuboid:nth-child(12) div:nth-child(1) {
+  animation-delay: -2.3s;
+}
+.cuboid:nth-child(12) div:nth-child(2) {
+  animation-delay: -1.8s;
+}
+.cuboid:nth-child(12) div:nth-child(3) {
+  animation-delay: -1.3s;
+}
+.cuboid:nth-child(12) div:nth-child(4) {
+  animation-delay: -0.8s;
+}
+.cuboid:nth-child(13) {
+  /* Note the '- $duration' after the animation-delays
+   * This prevents planks being stationary at start
+   */
+  animation-delay: -0.7s;
+  /* Cycle through faces adding color delays */
+}
+.cuboid:nth-child(13) div:nth-child(1) {
+  animation-delay: -2.2s;
+}
+.cuboid:nth-child(13) div:nth-child(2) {
+  animation-delay: -1.7s;
+}
+.cuboid:nth-child(13) div:nth-child(3) {
+  animation-delay: -1.2s;
+}
+.cuboid:nth-child(13) div:nth-child(4) {
+  animation-delay: -0.7s;
+}
+.cuboid:nth-child(14) {
+  /* Note the '- $duration' after the animation-delays
+   * This prevents planks being stationary at start
+   */
+  animation-delay: -0.6s;
+  /* Cycle through faces adding color delays */
+}
+.cuboid:nth-child(14) div:nth-child(1) {
+  animation-delay: -2.1s;
+}
+.cuboid:nth-child(14) div:nth-child(2) {
+  animation-delay: -1.6s;
+}
+.cuboid:nth-child(14) div:nth-child(3) {
+  animation-delay: -1.1s;
+}
+.cuboid:nth-child(14) div:nth-child(4) {
+  animation-delay: -0.6s;
+}
+.cuboid:nth-child(15) {
+  /* Note the '- $duration' after the animation-delays
+   * This prevents planks being stationary at start
+   */
+  animation-delay: -0.5s;
+  /* Cycle through faces adding color delays */
+}
+.cuboid:nth-child(15) div:nth-child(1) {
+  animation-delay: -2s;
+}
+.cuboid:nth-child(15) div:nth-child(2) {
+  animation-delay: -1.5s;
+}
+.cuboid:nth-child(15) div:nth-child(3) {
+  animation-delay: -1s;
+}
+.cuboid:nth-child(15) div:nth-child(4) {
+  animation-delay: -0.5s;
+}
+.cuboid div {
+  position: absolute;
+  background-color: #8a5b0f;
+  backface-visibility: hidden;
+  /* Improves stability */
+}
+.cuboid .front,
+.cuboid .left,
+.cuboid .back,
+.cuboid .right {
+  animation: color 1s infinite linear alternate;
+}
+.cuboid .front,
+.cuboid .back {
+  height: 20px;
+  width: 200px;
+}
+.cuboid .bottom,
+.cuboid .top {
+  height: 20px;
+  width: 200px;
+}
+.cuboid .left,
+.cuboid .right {
+  height: 20px;
+  width: 20px;
+}
+.cuboid .front {
+  transform: translateZ(10px);
+}
+.cuboid .back {
+  transform: rotateY(180deg) translateZ(10px);
+}
+.cuboid .top {
+  transform: rotateX(90deg) translateZ(10px);
+  background-color: #f0c175;
+}
+.cuboid .bottom {
+  transform: rotateX(-90deg) translateZ(10px);
+}
+.cuboid .left {
+  transform: rotateY(-90deg) translateZ(10px);
+}
+.cuboid .right {
+  transform: rotateY(90deg) translateZ(190px);
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+@keyframes color {
+  from {
+    background-color: #f0c175;
+  }
+
+  to {
+    background-color: #8a5b0f;
+  }
+}
+@keyframes camera {
+  from {
+    transform: rotateX(-40deg);
+  }
+
+  to {
+    transform: rotateY(40deg);
+  }
+}

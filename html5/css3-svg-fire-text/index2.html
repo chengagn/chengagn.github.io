@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>CSS3/SVG火焰背景遮罩文字动画DEMO演示</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <svg viewBox="0 0 600 300">
+
+  <!-- Pattern -->
+  <pattern 
+           id="p-fire" 
+           viewBox="30 100 186 200"
+           patternUnits="userSpaceOnUse"
+           width="216" height="200"
+           x="-70" y="35">
+
+    <!-- Fire -->
+    <image xlink:href="css/fire.gif" width="256" height="300"/>
+  </pattern>
+
+  <!-- Text -->
+  <text text-anchor="middle"
+        x="50%"
+        y="50%"
+        dy=".35em"
+        class="text"
+        >
+    Noor 
+  </text>
+
+</svg>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+@charset 'utf-8';
+html,body {
+			 background: #555555;
+		}
+		
+		.wrap5,
+		.wrap4,
+		.wrap0,
+		.wrap1,
+		.wrap {
+			width: 50px;
+			height: 50px;
+			background: #28292a;
+			margin: 20px auto;
+			box-shadow: 1px 1px 10px #333,-1px -1px 10px #333;
+			cursor: pointer;
+		}
+/*第一个按钮----------------------------------------------*/
+		.wrap {
+			border: 15px solid  #eef2e6;
+			padding:5px;
+		}
+		.wrap div {
+			display: none;
+			width: 50px;
+			height: 50px;
+			background: #00a800;
+
+		}
+/*第二个按钮----------------------------------------------*/
+		.wrap0 {
+			border: 15px solid  #eef2e6;
+			padding:5px;
+		}
+		.wrap0 div {
+			display: none;
+			width: 50px;
+			height: 50px;
+			background: url(../images/20.png) no-repeat;
+			background-size: 100% 100%;
+		}
+/*第三个按钮----------------------------------------------*/
+		.wrap1 div {
+			display: none;
+			width: 50px;
+			height: 50px;
+			background: url(../images/19.png) no-repeat;
+			background-size: 100% 100%;
+		}
+/*第三个按钮----------------------------------------------*/
+		.wrap4 {
+			width: 70px;
+			height: 70px;
+			background: #eef2e6;
+			border-radius: 50%;
+			padding:15px;
+		}
+		.wrap4 div {
+			width: 60px;
+			height: 60px;
+			background: #333;
+			border-radius: 50%;
+			padding: 5px;
+
+		}
+		.wrap4 div div {
+			width: 50px;
+			height: 50px;
+			background: rgba(0,169,0,1);
+			opacity: 0.8;
+			box-shadow: inset 1px 1px 1px #333,inset -1px -1px 1px #333,;
+		}
+		/*第五个按钮样式*/
+		.wrap5 {
+			position: relative;
+			width: 200px;
+			height: 50px;
+			background: #222;
+			border-radius: 25px/50%;
+			margin: 0 auto;
+			box-shadow: inset 0px -1px 3px #999,inset 0px 1px 3px #000;
+		}
+		.wrap5 span{
+			float: left;
+			display: block;
+			width: 100px;
+			height: 50px;
+			line-height:50px;
+			color: #00a900;
+			text-align: center;
+			font-size: 30px;
+		}
+		.wrap5 div {
+			position: absolute;
+			top: 2px;
+			left: 2px;
+			width:100px;
+			height: 45px;
+			border-radius: 25px/50%;
+			background: #fff;
+
+		}
+		/*第六个样式*/
+		.wrap6 {
+			position: relative;
+			width: 200px;
+			height: 20px;
+			border-radius:10px/50%;
+			margin: 30px auto;
+			background: #444;
+			box-shadow: inset 0px -1px 2px #999,inset 0px 1px 2px #000; 
+		}
+		.wrap6 div{
+			position: absolute;
+			top: -5px;
+			width: 30px;
+			height: 30px;
+			border-radius:50%;
+			background: #eee;
+		}
+		/*第七个按钮样式*/
+		.wrap7 {
+			position: relative;
+			width: 300px;
+			height: 50px;
+			background: #222;
+			border-radius: 25px/50%;
+			margin: 0 auto;
+			box-shadow: inset 0px -1px 3px #999,inset 0px 1px 3px #000;
+		}
+		.wrap7 span{
+			float: left;
+			display: block;
+			width: 100px;
+			height: 50px;
+			line-height:50px;
+			color: #00a900;
+			text-align: center;
+			font-size: 30px;
+			cursor: pointer;
+		}
+		.wrap7 div {
+			position: absolute;
+			top: 2px;
+			left: 200px;
+			width:100px;
+			height: 45px;
+			line-height: 45px;
+			font-size: 30px;
+			text-align: center;
+			color: #00a900;
+			border-radius: 25px/50%;
+			background: rgba(255,255,255,0.5);
+		}
+		.wrap-con {
+			width: 500px;
+			height: 70px;
+			margin: 20px auto;
+		}
+		.wrap-con > div {
+			float: left;
+			width: 50px;
+			height: 50px;
+			background: #333;
+			border: 10px solid #f0f0f0; 
+			margin: 0px 10px;
+		}
+		.wrap-con > div div {
+			display: none;
+			width: 50px;
+			height: 50px;
+			background: url(../images/19.png) no-repeat;
+			background-size: 100% 100%;
+		}

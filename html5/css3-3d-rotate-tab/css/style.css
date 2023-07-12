@@ -1,0 +1,105 @@
+body {
+  background: #F8FFE5;
+}
+
+.perspective {
+  -webkit-perspective: 76em;
+          perspective: 76em;
+  -webkit-perspective-origin: 50% 50px;
+          perspective-origin: 50% 50px;
+  width: 494px;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  color: #fff;
+  text-align: center;
+}
+
+input {
+  display: none;
+}
+
+.tab {
+  position: absolute;
+  width: 80px;
+  height: 70px;
+  background: pink;
+  right: 0;
+  line-height: 70px;
+  font-weight: 300;
+}
+.tab:nth-child(1) {
+  top: -5px;
+  background: #06D6A0;
+}
+.tab:nth-child(2) {
+  top: 69px;
+  background: #1B9AAA;
+}
+.tab:nth-child(3) {
+  top: 143px;
+  background: #EF476F;
+}
+
+.cube {
+  position: relative;
+  margin: 60px auto;
+  width: 300px;
+  height: 200px;
+  -webkit-transform-origin: 0 100px;
+          transform-origin: 0 100px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.5s ease-in;
+  transition: -webkit-transform 0.5s ease-in;
+  transition: transform 0.5s ease-in;
+  transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+}
+
+.tab-content {
+  width: 300px;
+  height: 200px;
+  position: absolute;
+}
+.tab-content h1 {
+  font-size: 25px;
+  margin: 75px 0 10px;
+  font-weight: 300;
+}
+.tab-content p {
+  font-size: 12px;
+}
+.tab-content:nth-child(2) {
+  -webkit-transform: translateZ(100px);
+          transform: translateZ(100px);
+  background: #1B9AAA;
+}
+.tab-content:nth-child(1) {
+  -webkit-transform: rotateX(-270deg) translateY(-100px);
+          transform: rotateX(-270deg) translateY(-100px);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  background: #06D6A0;
+}
+.tab-content:nth-child(3) {
+  -webkit-transform: rotateX(-90deg) translateY(100px);
+          transform: rotateX(-90deg) translateY(100px);
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+  background: #EF476F;
+}
+
+#tab-top:checked ~ .cube {
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+}
+
+#tab-front:checked ~ .cube {
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+}
+
+#tab-bottom:checked ~ .cube {
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+}

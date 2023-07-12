@@ -1,0 +1,103 @@
+*{
+    /* 初始化 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* 方便演示 满屏居中 */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222237;
+    /* 溢出隐藏 */
+    overflow: hidden;
+    /* 禁止选取 */
+    user-select: none;
+}
+ul{
+    width: 100%;
+}
+ul li{
+    list-style: none;
+    font-size: 40px;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+}
+.container{
+    width: 90vw;
+    max-width: 400px;
+    height: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* 光标为手 */
+    cursor: grab;
+    border-radius: 8px;
+    /* 内阴影 */
+    box-shadow: inset 0 0 50px 0 rgba(0,0,0,0.5);
+    /* 蒙版（自上而下：透明-黑色-透明） */
+    -webkit-mask: linear-gradient(to bottom,transparent,#000,transparent);
+}
+/* 光标为抓拳 */
+.container.grabbing{
+    cursor: grabbing;
+}
+/* 未选项 */
+.picker{
+    color: #3b3b60;
+    width: 100%;
+    display: flex;
+    transform: translateY(calc(var(--top) * 1px));
+}
+/* 选中项（高亮） */
+.clip{
+    position: absolute;
+    color: blue;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    top: 120px;
+    overflow: hidden;
+}
+/* 左边三角形 */
+.clip::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 16px solid blue;
+    border-top: 8px solid transparent;
+    border-right: none;
+    border-bottom: 8px solid transparent;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(50% - 80px);
+}
+/* 右边三角形 */
+.clip::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: none;
+    border-top: 8px solid transparent;
+    border-right: 16px solid blue;
+    border-bottom: 8px solid transparent;
+    top: 50%;
+    transform: translateY(-50%);
+    right: calc(50% - 80px);
+}
+.clip .wrapper{
+    /* --num为css的自定义属性，可通过var函数对其调用 */
+    --num: 0;
+    margin-top: -120px;
+    transform: translateY(calc(var(--num) * -60px));
+}
+.transition{
+    /* 过渡 */
+    transition: transform 0.35s;
+}

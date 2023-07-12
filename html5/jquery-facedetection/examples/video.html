@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>jQuery人脸识别插件-视频人物人脸识别DEMO演示</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .video-container {
+            position: relative;
+            width: 260px;
+            height: auto;
+            margin: 20px auto;
+            border: 10px solid #fff;
+            box-shadow: 0 5px 5px #000;
+        }
+            .video {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+
+        .face {
+            position: absolute;
+            border: 2px solid #FFF;
+        }
+    </style>
+</head>
+<body>
+<div style="text-align:center;clear:both">
+<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+<script src="/follow.js" type="text/javascript"></script>
+</div>
+    <div class="video-container">
+        <video id="video" class="video" loop autoplay>
+            <source src="assets/video.mp4"  type="video/mp4">
+            <source src="assets/video.ogv"  type="video/ogg">
+            <source src="assets/video.webm" type="video/webm">
+        </video>
+    </div>
+    
+    <a id="try-it" href="#">
+        <img class="button-try" src="img/tryit.svg">
+    </a>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="../dist/jquery.facedetection.js"></script> 
+    <script>
+        /* global $ */
+        $(function () {
+            "use strict";
+            
+            $('#try-it').click(function (e) {
+                e.preventDefault();
+
+                $('.face').remove();
+
+                if ($('#video')[0].paused) {
+                    $('#video')[0].play();
+                    return;
+                } else {
+                    $('#video')[0].pause();
+                }
+
+                $('#video').faceDetection({
+                    interval: 1,
+                    complete: function (faces) {
+                        for (var i = 0; i < faces.length; i++) {
+                            $('<div>', {
+                                'class':'face',
+                                'css': {
+                                    'position': 'absolute',
+                                    'left':     faces[i].x + 'px',
+                                    'top':      faces[i].y + 'px',
+                                    'width':    faces[i].width  + 'px',
+                                    'height':   faces[i].height + 'px'
+                                }
+                            })
+                            .insertAfter(this);
+                        }
+                    },
+                    error:function (code, message) {
+                        alert('Error: ' + message);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

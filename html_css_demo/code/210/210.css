@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    /* 100%窗口宽高 */
+    width: 100vw;
+    height: 100vh;
+    /* 弹性布局 居中显示 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    font-size: 60px;
+    /* 对比度滤镜 */
+    /* 划重点：对比度滤镜+模糊滤镜可以做出溶球效果 */
+    filter: contrast(15);
+}
+.word{
+    width: 100%;
+    text-align: center;
+    /* 绝对定位 居中 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* 模糊滤镜 默认不模糊 */
+    filter: blur(0px);
+    /* 执行动画：动画名 时长 加速后减速 无限播放 */
+    animation: wordChange 8s ease-in-out infinite;
+}
+/* 为每句古诗设置不同的动画延迟时间 */
+.word:nth-child(1){
+    animation-delay: -8s;
+}
+.word:nth-child(2){
+    animation-delay: -6s;
+}
+.word:nth-child(3){
+    animation-delay: -4s;
+}
+.word:nth-child(4){
+    animation-delay: -2s;
+}
+
+/* 定义动画 */
+@keyframes wordChange {
+    0%,
+    10%,
+    100%{
+        filter: blur(0px);
+        opacity: 1;
+    }
+    70%,
+    80%{
+        filter: blur(80px);
+        opacity: 0;
+    }
+}

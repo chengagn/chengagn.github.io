@@ -1,0 +1,47 @@
+*{
+    /* 初始化 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* 100%窗口宽高 */
+    height: 100vh;
+    /* 弹性布局 水平+垂直居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+}
+h1{
+    width: 1100px;
+    height: 365px;
+    color: #0ff;
+    /* 转大写 */
+    text-transform: uppercase;
+}
+/* 使用splitting插件后会自动生成.char元素 */
+.char{
+    /* 绝对定位 */
+    position: absolute;
+    /* 设置过山车运动路径 */
+    offset-path: path('M.2 219.6c247-107 233.3 91.4 406.4 138.4C659.2 426.6 750.2 6.6 552.2.6 337.7-5.9 426.9 415 696.1 359.4c256.1-52.9 182.1-217.9 413.1-163.9');
+    /* 设置偏移的距离 */
+    /* --char-index是CSS的自定义属性，可通过var函数对其调用，这里是使用splitting插件后自动生成的 */
+    offset-distance: calc(var(--char-index) * 24px);
+    /* 执行动画：动画名称 时长 贝塞尔曲线 无限次播放 轮流反向播放 */
+    animation: loop 3.5s cubic-bezier(0.62,0.01,0.42,1.01) infinite alternate;
+    /* 设置动画延迟 */
+    animation-delay: calc(var(--char-index) * 0.01s);
+}
+
+/* 定义动画 */
+@keyframes loop {
+    50%{
+        color: #faf;
+        offset-distance: calc(var(--char-index) * 40px + 700px);
+    }
+    100%{
+        offset-distance: calc(var(--char-index) * 24px + 1700px);
+    }
+}

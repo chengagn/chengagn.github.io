@@ -1,0 +1,108 @@
+* {
+	margin:0; padding:0; outline:0;
+	transition:all .5s .1s;
+	-moz-transition:all .5s .1s;
+	-ms-transition:all .5s .1s;
+	-o-transition:all .5s .1s;
+	-webkit-transition:all .5s .1s;
+} body {
+	background:#e34a3a;
+	font-family:"Trebuchet MS", Arial, "Helvetica-Normal", Helvetica, Verdana;
+} a, a:hover {
+	color:#FFF;
+	text-decoration:none;
+} nav {
+	padding:50px 0;
+} nav ul {
+	display:table;
+	margin:0 auto;
+	background:#34495e;
+	border-radius:5px;
+	border-bottom:2px solid #2c3f50;
+} nav ul li {
+	float:left;
+	border-left:1px solid #435565;
+	border-right:1px solid #2c3f50;
+	position:relative;
+	list-style:none;
+	line-height:14px;
+	font-size:14px;
+	font-weight:bold;
+} nav ul li:first-of-type {
+	border-left:none;
+} nav ul li:last-of-type {
+	border-right:none;
+} nav ul li a {
+	display:block;
+	padding:13px 15px;
+} nav>ul>li>a:before {
+	content:"\00BB \0020";
+	display:block;
+	float:left;
+	font-size:20px;
+	width:20px;
+	height:14px;
+	text-align:center;
+	line-height:14px;
+	transform:rotate(90deg);
+	-moz-transform:rotate(90deg);
+	-ms-transform:rotate(90deg);
+	-o-transform:rotate(90deg);
+	-webkit-transform:rotate(90deg);
+} nav>ul>li:first-of-type>a {
+	border-radius:5px 0 0 0;
+} nav>ul>li:last-of-type>a {
+	border-radius:0 5px 0 0;
+} nav>ul>li:hover>a:before {
+	margin:0 3px 0 -3px;
+	-moz-transform:rotate(-90deg);
+	-ms-transform:rotate(-90deg);
+	-o-transform:rotate(-90deg);
+	-webkit-transform:rotate(-90deg);	
+} nav>ul>li:hover>a {
+	background-color:#1bbc9b;
+	display:block;
+	padding:13px 15px;
+} nav ul li ul {
+	display:block;
+	position:absolute;
+	border:none;
+	left:0;
+	top:200%;
+	opacity:0;
+	width:150%;
+	border-radius:0 0 5px 5px;
+	background-color:#1bbc9b;
+} nav ul li:last-of-type ul {
+	left:auto;
+	right:0;
+} nav ul li ul li {
+	height:0;
+	padding:0;
+	font-size:12px;
+	float:none;
+	border:none;
+	overflow:hidden;
+} nav ul li ul li a {
+	text-indent:-50%;
+	opacity:0;
+} nav ul li:hover ul {
+	opacity:1;
+	top:40px;
+	padding:5px 0;
+} nav ul li:hover ul li {
+	height:40px;
+} nav ul li:hover ul li a {
+	text-indent:0;
+	opacity:1;
+} nav ul li:hover ul li:hover a {
+	background-color:#07a887;
+} p {
+  position:fixed;
+  right:0;
+  bottom:0;
+  font-size:11px;
+  color:#FFF;
+  display:block;
+  padding:5px;
+}

@@ -1,0 +1,70 @@
+*{
+    /* 初始化 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* 方便演示 满屏居中 */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top,#dfe9f3,#fff);
+}
+.container{
+    width: 1220px;
+}
+li{
+    list-style: none;
+    position: relative;
+    width: 400px;
+    height: 260px;
+    float: left;
+    margin: 5px 10px 5px 0;
+    /* 溢出隐藏 */
+    overflow: hidden;
+}
+li img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* 过渡效果 */
+    transition: 0.25s ease-in;
+}
+li p{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.75);
+    position: absolute;
+    left: 0;
+    /* 默认移出可视范围 */
+    top: -100%;
+    font-size: 15px;
+    color: #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    line-height: 24px;
+}
+li:hover img{
+    /* 悬停图片变大 */
+    transform: scale(1.1);
+}
+li:nth-child(3){
+    margin-right: 0;
+    width: 400px;
+    height: 530px;
+}
+li:nth-child(4),
+li:nth-child(5){
+    margin-top: -265px;
+}
+li:nth-child(5){
+    margin-left: 410px;
+}
+li:nth-child(8){
+    margin-right: 0;
+}

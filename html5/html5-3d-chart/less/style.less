@@ -1,0 +1,189 @@
+// vim: et:sts=2:sw=2
+
+@import url("http://fonts.googleapis.com/css?family=Cabin:400,700,400italic");
+
+@chart-blue: hsl(207, 60%, 60%);
+
+body, input, button, textarea, select {
+  font: 16px Cabin;
+  color: #bdbebf;
+  background: #4a4844;
+}
+
+figure {
+  text-align: center;
+}
+
+[peak-chart] { .peak-chart; }
+
+figcaption {
+  line-height: 36px;
+  font-style: italic;
+
+  button {
+    background: none;
+    border: 1px solid lightgray;
+    cursor: pointer;
+    font-size: 90%;
+    margin: 0;
+    padding: 1px 0.5em 0;
+    line-height: 1.3;
+    border-radius: 0.5em;
+    vertical-align: text-top;
+
+    &:hover {
+      background: rgba(0,0,0,0.04);
+    }
+  }
+}
+
+.peak-chart(
+    @r: 120px,
+
+    @clr1: hsl(192, 60%, 60%),
+    @clr2: @chart-blue,
+    @clr3: hsl(234, 32%, 60%),
+    @clr4: hsl(345, 58%, 60%),
+    @clr5: hsl(185, 27%, 60%),
+    @clr6: hsl(298, 29%, 60%),
+    @clr7: hsl(220,  6%, 90%),
+    @clr8: hsl(220,  6%, 90%),
+    @clr9: hsl(220,  6%, 90%)
+  ) {
+
+  position: relative;
+  display: inline-block;
+  width: (@r * 2);
+  height: (@r * 2);
+  border-radius: @r;
+  margin-top: @r;
+
+  -webkit-transform: rotateX(45deg);
+     -moz-transform: rotateX(45deg);
+      -ms-transform: rotateX(45deg);
+          transform: rotateX(45deg);
+  
+  &, * {
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+  }
+
+  > [face] {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: @r;
+    height: @r;
+
+    -webkit-transform-origin: 0 100%;
+       -moz-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+    
+    .transition;
+
+    .fill(@color) {
+      background-image:
+        -webkit-linear-gradient(bottom right, fade(white, 0), fade(white, 25%) 50%, transparent 50%),
+        -webkit-linear-gradient(bottom right, @color, @color 50%, transparent 50%);
+      background-image:
+        linear-gradient(to top left, fade(white, 0), fade(white, 25%) 50%, transparent 50%),
+        linear-gradient(to top left, @color, @color 50%, transparent 50%);
+    }
+
+    .bkfill(@color) {
+      .fill((darken(@color, 10%)));
+    }
+    
+     &:nth-child(1) { .bkfill(@clr1); }
+     &:nth-child(2) {   .fill(@clr1); }
+     &:nth-child(3) { .bkfill(@clr2); }
+     &:nth-child(4) {   .fill(@clr2); }
+     &:nth-child(5) { .bkfill(@clr3); }
+     &:nth-child(6) {   .fill(@clr3); }
+     &:nth-child(7) { .bkfill(@clr4); }
+     &:nth-child(8) {   .fill(@clr4); }
+     &:nth-child(9) { .bkfill(@clr5); }
+    &:nth-child(10) {   .fill(@clr5); }
+    &:nth-child(11) { .bkfill(@clr6); }
+    &:nth-child(12) {   .fill(@clr6); }
+    &:nth-child(13) { .bkfill(@clr7); }
+    &:nth-child(14) {   .fill(@clr7); }
+    &:nth-child(15) { .bkfill(@clr8); }
+    &:nth-child(16) {   .fill(@clr8); }
+    &:nth-child(17) { .bkfill(@clr9); }
+    &:nth-child(18) {   .fill(@clr9); }
+  }
+
+  > label {
+    position: absolute;
+    font-weight: bold;
+    font-size: 90%;
+    
+    .transition;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 3px;
+
+      @grst: (lighten(@chart-blue, 30%));
+      .gradient(~'@{grst}, @{chart-blue}', ~'to bottom left', ~'top right');
+    }
+
+    &[point=bottomright] {
+      padding-right: 6px;
+      padding-bottom: 9px;
+      &:before {
+        right: -3px;
+        bottom: 3px;
+      }
+    }
+
+    &[point=bottomleft] {
+      padding-left: 6px;
+      padding-bottom: 9px;
+      &:before {
+        left: -3px;
+        bottom: 3px;
+      }
+    }
+
+    &[point=topleft] {
+      padding-left: 4px;
+      padding-top: 4px;
+      &:before {
+        left: -3px;
+        top: -3px;
+      }
+    }
+
+    &[point=topright] {
+      padding-right: 4px;
+      padding-top: 4px;
+      &:before {
+        right: -3px;
+        top: -3px;
+      }
+    }
+  }
+}
+
+// -------
+// Helpers
+// -------
+
+.gradient(@stops, @angle: to bottom, @oldAngle: top) {
+  background-image: -webkit-linear-gradient(@oldAngle, @stops);
+  background-image: linear-gradient(@angle, @stops);
+}
+
+.transition(@props: all, @dur: 0.25s, @easing: ease-in) {
+  -webkit-transition: @props @dur @easing;
+     -moz-transition: @props @dur @easing;
+          transition: @props @dur @easing;
+}

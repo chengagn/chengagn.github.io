@@ -1,0 +1,63 @@
+*{
+    /* 初始化 */
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* 100%窗口宽高 */
+    min-height: 100vh;
+    /* 弹性布局 水平+垂直居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fef0ff;
+}
+img{
+    /* 定义自定义属性，可通过var函数进行调用 */
+    /* 图片尺寸 */
+    --s:200px;
+    /* 边框大小 */
+    --b:6px;
+    /* 边框颜色 */
+    --c:#eb9dff;
+    /* 背景颜色 */
+    --cb:#c87be4;
+    /* 缩放值 */
+    --sc:1;
+
+    width: var(--s);
+    height: var(--s);
+    margin: 5px;
+    padding-top: 25px;
+    cursor: pointer;
+    border-radius: 0 0 999px 999px;
+    /* 设置background-position、background-repeat、background-clip */
+    --g:50%/calc(100% / var(--sc)) 100% no-repeat content-box;
+    /* 计算轮廓与边框边缘的距离 */
+    --o:calc((1 / var(--sc) - 1) * var(--s) / 2 - var(--b));
+    /* 设置轮廓 */
+    outline: var(--b) solid var(--c);
+    /* 轮廓与边框边缘的距离 */
+    outline-offset: var(--o);
+    /* 背景 */
+    background: radial-gradient(circle closest-side, var(--cb) calc(99% - var(--b)),var(--c) calc(100% - var(--b)) 99%,transparent) var(--g);
+    /* 遮罩 */
+    -webkit-mask: linear-gradient(#000 0 0) no-repeat 50% calc(1px - var(--o)) / calc(100% / var(--sc) - 2 * var(--b) - 2px) 50%,
+    radial-gradient(circle closest-side,#000 99%,transparent) var(--g);
+    /* 默认缩放值 */
+    transform: scale(var(--sc));
+    transition: 0.5s;
+}
+/* 悬停时图片放大 */
+img:hover{
+    --sc:1.4;
+}
+/* 为第2、3张图片设置背景颜色、边框颜色 */
+img:nth-child(2){
+    --c:#ffacc6;
+    --cb:#ff75a1;
+}
+img:nth-child(3){
+    --c:#4bd2ff;
+    --cb:#03aee6;
+}

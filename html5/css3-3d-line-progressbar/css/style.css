@@ -1,0 +1,277 @@
+body {
+  background-color: #411F2D;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+body .spinner {
+  position: relative;
+  margin: 15px;
+}
+body .spinner .spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 10px;
+  height: 20px;
+  -webkit-animation: spin 2s ease-out infinite;
+          animation: spin 2s ease-out infinite;
+}
+body .spinner .spin .branch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 2px;
+  height: 0px;
+}
+body .spinner .spin .branch:before, body .spinner .spin .branch:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #F88863;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+}
+body .spinner .spin .branch:before {
+  top: 0%;
+}
+body .spinner .spin .branch:after {
+  top: 100%;
+}
+body .spinner .spin .branch:nth-child(1) {
+  -webkit-animation: extend1 2s ease-out infinite;
+          animation: extend1 2s ease-out infinite;
+  background-color: #AC4147;
+}
+body .spinner .spin .branch:nth-child(1):before, body .spinner .spin .branch:nth-child(1):after {
+  width: 10px;
+  height: 10px;
+}
+body .spinner .spin .branch:nth-child(2) {
+  -webkit-animation: extend2 2s ease-out infinite;
+          animation: extend2 2s ease-out infinite;
+}
+body .spinner .spin .branch:nth-child(3) {
+  -webkit-animation: extend3 2s ease-out infinite;
+          animation: extend3 2s ease-out infinite;
+}
+body .spinner:nth-child(1) .spin {
+  -webkit-animation-delay: 0.125s;
+          animation-delay: 0.125s;
+}
+body .spinner:nth-child(1) .spin .branch {
+  -webkit-animation-delay: 0.125s;
+          animation-delay: 0.125s;
+}
+body .spinner:nth-child(2) .spin {
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+body .spinner:nth-child(2) .spin .branch {
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+body .spinner:nth-child(3) .spin {
+  -webkit-animation-delay: 0.375s;
+          animation-delay: 0.375s;
+}
+body .spinner:nth-child(3) .spin .branch {
+  -webkit-animation-delay: 0.375s;
+          animation-delay: 0.375s;
+}
+body .spinner:nth-child(4) .spin {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+body .spinner:nth-child(4) .spin .branch {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+body .spinner:nth-child(5) .spin {
+  -webkit-animation-delay: 0.625s;
+          animation-delay: 0.625s;
+}
+body .spinner:nth-child(5) .spin .branch {
+  -webkit-animation-delay: 0.625s;
+          animation-delay: 0.625s;
+}
+body .spinner:nth-child(6) .spin {
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+}
+body .spinner:nth-child(6) .spin .branch {
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+}
+body .spinner:nth-child(7) .spin {
+  -webkit-animation-delay: 0.875s;
+          animation-delay: 0.875s;
+}
+body .spinner:nth-child(7) .spin .branch {
+  -webkit-animation-delay: 0.875s;
+          animation-delay: 0.875s;
+}
+body .spinner:nth-child(8) .spin {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+body .spinner:nth-child(8) .spin .branch {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+body .spinner:nth-child(9) .spin {
+  -webkit-animation-delay: 1.125s;
+          animation-delay: 1.125s;
+}
+body .spinner:nth-child(9) .spin .branch {
+  -webkit-animation-delay: 1.125s;
+          animation-delay: 1.125s;
+}
+body .spinner:nth-child(10) .spin {
+  -webkit-animation-delay: 1.25s;
+          animation-delay: 1.25s;
+}
+body .spinner:nth-child(10) .spin .branch {
+  -webkit-animation-delay: 1.25s;
+          animation-delay: 1.25s;
+}
+body .spinner:nth-child(11) .spin {
+  -webkit-animation-delay: 1.375s;
+          animation-delay: 1.375s;
+}
+body .spinner:nth-child(11) .spin .branch {
+  -webkit-animation-delay: 1.375s;
+          animation-delay: 1.375s;
+}
+body .spinner:nth-child(12) .spin {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+body .spinner:nth-child(12) .spin .branch {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+body .spinner:nth-child(13) .spin {
+  -webkit-animation-delay: 1.625s;
+          animation-delay: 1.625s;
+}
+body .spinner:nth-child(13) .spin .branch {
+  -webkit-animation-delay: 1.625s;
+          animation-delay: 1.625s;
+}
+body .spinner:nth-child(14) .spin {
+  -webkit-animation-delay: 1.75s;
+          animation-delay: 1.75s;
+}
+body .spinner:nth-child(14) .spin .branch {
+  -webkit-animation-delay: 1.75s;
+          animation-delay: 1.75s;
+}
+body .spinner:nth-child(15) .spin {
+  -webkit-animation-delay: 1.875s;
+          animation-delay: 1.875s;
+}
+body .spinner:nth-child(15) .spin .branch {
+  -webkit-animation-delay: 1.875s;
+          animation-delay: 1.875s;
+}
+body .spinner:nth-child(16) .spin {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+body .spinner:nth-child(16) .spin .branch {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+@-webkit-keyframes spin {
+  0%, 25% {
+    -webkit-transform: translate(-50%, -50%) rotate(90deg);
+            transform: translate(-50%, -50%) rotate(90deg);
+  }
+  75%, 100% {
+    -webkit-transform: translate(-50%, -50%) rotate(180deg);
+            transform: translate(-50%, -50%) rotate(180deg);
+  }
+}
+
+@keyframes spin {
+  0%, 25% {
+    -webkit-transform: translate(-50%, -50%) rotate(90deg);
+            transform: translate(-50%, -50%) rotate(90deg);
+  }
+  75%, 100% {
+    -webkit-transform: translate(-50%, -50%) rotate(180deg);
+            transform: translate(-50%, -50%) rotate(180deg);
+  }
+}
+@-webkit-keyframes extend1 {
+  0%, 25%, 75%, 100% {
+    height: 0px;
+  }
+  49%,51% {
+    height: 200px;
+  }
+}
+@keyframes extend1 {
+  0%, 25%, 75%, 100% {
+    height: 0px;
+  }
+  49%,51% {
+    height: 200px;
+  }
+}
+@-webkit-keyframes extend2 {
+  0%, 25%, 85%, 100% {
+    height: 0px;
+  }
+  54%,56% {
+    height: 300px;
+  }
+}
+@keyframes extend2 {
+  0%, 25%, 85%, 100% {
+    height: 0px;
+  }
+  54%,56% {
+    height: 300px;
+  }
+}
+@-webkit-keyframes extend3 {
+  0%, 25%, 75%, 100% {
+    height: 0px;
+  }
+  40% {
+    height: 100px;
+  }
+  60% {
+    height: 0px;
+  }
+  70% {
+    height: 20px;
+  }
+}
+@keyframes extend3 {
+  0%, 25%, 75%, 100% {
+    height: 0px;
+  }
+  40% {
+    height: 100px;
+  }
+  60% {
+    height: 0px;
+  }
+  70% {
+    height: 20px;
+  }
+}

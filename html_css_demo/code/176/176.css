@@ -1,0 +1,78 @@
+*{
+    /* 初始化 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* 方便演示，满屏居中 */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 渐变背景 */
+    background: linear-gradient(to bottom,#6a85b6,#bac8e0);
+    /* 溢出隐藏 */
+    overflow: hidden;
+}
+h1{
+    color: #fff;
+    text-align: center;
+}
+.input-box{
+    position: relative;
+}
+.input-box input{
+    /* 隐藏原生输入框 */
+    opacity: 0;
+}
+.input-box label{
+    min-width: 100%;
+    min-height: 40px;
+    background-color: #fff;
+    /* 弹性布局 水平+垂直居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    padding: 0 10px;
+    cursor: text;
+    /* 设置过渡 */
+    transition: 0.2s;
+}
+.input-box input:focus ~ label{
+    box-shadow: 0 5px 20px #6a85b6;
+}
+.input-box span{
+    font-size: 16px;
+    font-weight: bold;
+}
+.input-animate{
+    /* 打字动画：动画名 时长 加速后减速 */
+    animation: print 0.2s ease-in-out;
+}
+.shake{
+    /* 输入框颤动动画 */
+    animation: shake 0.2s ease-in-out;
+}
+
+/* 定义动画 */
+/* 打字动画 */
+@keyframes print {
+    0%{
+        position: absolute;
+        transform: scale(50);
+    }
+    99%{
+        position: absolute;
+    }
+    100%{
+        position: relative;
+    }
+}
+/* 输入框颤动动画 */
+@keyframes shake {
+    50%{
+        transform: scale(0.95);
+    }
+}

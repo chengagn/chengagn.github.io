@@ -1,0 +1,42 @@
+*{
+    /* 初始化 */
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* 100%窗口宽高 */
+    height: 100vh;
+    /* 弹性布局 水平+垂直居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 设置背景 */
+    background: url(/images/op1/4.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+h1{
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 30px 15px;
+    /* 竖排文字 */
+    writing-mode: vertical-lr;
+    /* 绝对定位 */
+    position: absolute;
+}
+h1:nth-child(1){
+    transform: translate(-50%,-300%);
+}
+h1:nth-child(2){
+    transform: translate(250%,-150%);
+}
+canvas{
+    /* 固定定位 */
+    position: fixed;
+    left: 0;
+    top: 0;
+    /* 层级尽量高些，作为顶层 */
+    z-index: 9999;
+    /* 加上这个属性，使得被遮罩的元素可以被点击到 */
+    pointer-events: none;
+}

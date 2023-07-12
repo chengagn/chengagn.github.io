@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta charset="UTF-8">
+  <title>SVG/CSS3 3D阴影文字 阴影线条流动特效DEMO演示</title>
+    
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  
+<main class="main">
+
+<div style="text-align:center;clear:both">
+<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+<script src="/follow.js" type="text/javascript"></script>
+</div>
+
+  <div>
+    <div>
+      <div class="svg-text__shaded hover" x="10%" y="20%" fill="white" text-anchor="start">:hover</div>
+    </div>
+    <svg class="svg-text" width="1.5em" height="0.7em" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="drop-stroke-shadow">
+          <fegaussianblur in="SourceAlpha" stddeviation="10"></fegaussianblur>
+        </filter>
+        <symbol id="stroke">
+          <text x="50%" y="67%" fill="none" stroke-width=".035em" stroke-linecap="round" stroke-linejoin="round" paint-order="stroke fill" text-anchor="middle">Shaded</text>
+        </symbol>
+        <symbol id="fill">
+          <text x="50%" y="60%" text-anchor="middle">Shaded</text>
+        </symbol>
+      </defs>
+      <g class="svg-text__shaded__stroke" stroke="#00cccc">
+        <use y="5%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroke" opacity="0.5" filter="url(#drop-stroke-shadow)"></use>
+        <use y="3%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroke"></use>
+        <use y="2%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroke"></use>
+        <use y="1%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroke"></use>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroke" stroke="cyan"></use>
+      </g>
+      <g fill="#e6e6e6">
+        <use class="svg-text__shaded" y="7%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fill"></use>
+        <use y="6.5%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fill"></use>
+        <use y="6%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fill"></use>
+        <use y="5.5%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fill"></use>
+        <use y="5%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fill"></use>
+        <use y="4.5%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fill"></use>
+        <use y="4%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fill"></use>
+        <use y="3.5%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fill" fill="white"></use>
+      </g>
+    </svg>
+    <div>
+      <div class="svg-text__shaded hover" x="10%" y="20%" fill="white" text-anchor="start">:hover</div>
+    </div>
+    <svg class="svg-text" width="1.5em" height="0.7em" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <symbol id="stroke-2">
+          <text class="bold" x="50%" y="67%" fill="none" stroke-width=".1em" stroke-linecap="round" stroke-linejoin="round" paint-order="stroke fill" text-anchor="middle">Bold</text>
+        </symbol>
+        <symbol id="fill-2">
+          <text class="bold" x="50%" y="60%" text-anchor="middle">Bold</text>
+        </symbol>
+      </defs>
+      <g class="svg-text__shaded__stroke" stroke="#00cccc">
+        <use y="5%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroke-2" opacity="0.5" filter="url(#drop-stroke-shadow)"></use>
+        <use y="3%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroke-2"></use>
+        <use y="2%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroke-2"></use>
+        <use y="1%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroke-2"></use>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroke-2" stroke="cyan"></use>
+      </g>
+      <g fill="#e6e6e6">
+        <use class="svg-text__shaded" y="7%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fill-2"></use>
+        <use y="6.5%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fill-2"></use>
+        <use y="6%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fill-2"></use>
+        <use y="5.5%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fill-2"></use>
+        <use y="5%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fill-2"></use>
+        <use y="4.5%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fill-2"></use>
+        <use y="4%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fill-2"></use>
+        <use y="3.5%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fill-2"></use>
+        <use y="3%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fill-2" fill="white"></use>
+      </g>
+    </svg>
+  </div>
+</main>
+  
+    <script  src="js/index.js"></script>
+
+</body>
+</html>

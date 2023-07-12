@@ -1,0 +1,190 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+body {
+  background-color: #F2EFE9;
+  overflow: hidden;
+  padding-top: 40px;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 1em;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#wrapper {
+  width: 680px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  line-height: 1.4em;
+  color: #4e6a6a;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  font-family: helvetica, arial, sans-serif;
+}
+h1 span {
+  font-weight: lighter;
+}
+
+.card-drop {
+  max-width: 300px;
+  position: relative;
+  margin: 0 auto;
+  -moz-perspective: 800px;
+  -webkit-perspective: 800px;
+  perspective: 800px;
+}
+.card-drop a {
+  display: block;
+  width: 100%;
+  background-color: salmon;
+  padding: 20px 0 20px 20px;
+  height: 60px;
+  text-decoration: none;
+  color: #1e2929;
+  background-color: #5f8181;
+  border-bottom: 1px solid #4e6a6a;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.card-drop a i {
+  display: inline-block;
+  width: 20px;
+}
+.card-drop > a.toggle {
+  position: relative;
+  z-index: 300;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -moz-transform-origin: 50% 0%;
+  -ms-transform-origin: 50% 0%;
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -moz-transition: 0.1s linear;
+  -o-transition: 0.1s linear;
+  -webkit-transition: 0.1s linear;
+  transition: 0.1s linear;
+  background-color: #729797;
+}
+.card-drop > a.toggle:active {
+  -moz-transform: rotateX(60deg);
+  -webkit-transform: rotateX(60deg);
+  transform: rotateX(60deg);
+}
+.card-drop > a.toggle.active:before {
+  content: "\f0d8";
+}
+.card-drop > a.toggle:before {
+  font-family: 'FontAwesome';
+  content: '\f0d7';
+  font-size: 1.3em;
+  color: #344646;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 59px;
+  line-height: 60px;
+  width: 60px;
+  text-align: center;
+  display: block;
+  border-left: 1px solid #4e6a6a;
+}
+.card-drop ul {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  display: block;
+  width: 100%;
+}
+.card-drop ul li {
+  margin: 0 auto;
+  -moz-transition: all, 0.3s ease-out;
+  -o-transition: all, 0.3s ease-out;
+  -webkit-transition: all, 0.3s ease-out;
+  transition: all, 0.3s ease-out;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  width: 100%;
+}
+.card-drop ul li a:hover {
+  background-color: #6a9090;
+  color: #dce5e5;
+}
+.card-drop ul li.active a {
+  color: #95b1b1;
+  background-color: #547272;
+  cursor: default;
+}
+.card-drop ul li.closed a:hover {
+  cursor: default;
+  background-color: #5f8181;
+}

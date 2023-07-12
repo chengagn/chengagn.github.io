@@ -1,0 +1,128 @@
+@import "compass/css3";
+
+//Author: Brady Sammons
+//URL: www.bradysammons.com
+@import "compass/reset";
+@import "compass/css3";
+
+//!!Change Color & size Here:
+$primary:#5F8181;
+$width:300px;
+$border:darken($primary, 8%);
+
+body{
+	background-color: #F2EFE9;
+  overflow:hidden;
+	padding-top:40px;
+	font-family: helvetica, arial, sans-serif;
+	font-size: 1em;
+}
+*{
+	@include box-sizing(border-box);
+}
+#wrapper{
+	width: 680px;
+	margin: 0 auto;
+}
+h1{
+	font-size:2.5em;
+	text-align: center;
+	font-weight: bold;
+	margin-bottom:10px;
+	line-height: 1.4em;
+	color: darken($primary, 8%);
+	text-shadow:0 1px 0 rgba(255,255,255,.8);
+	font-family:helvetica, arial, sans-serif;
+	span{
+		font-weight: lighter;
+	}
+}
+
+.card-drop{
+	max-width: $width;
+	position: relative;
+	margin: 0 auto;
+	@include perspective(800px);
+	a{
+		display: block;
+		width: 100%;
+		background-color: salmon;
+		padding:20px 0 20px 20px;
+		height: 60px;
+		text-decoration: none;
+		color: darken($primary, 30%);
+		background-color: $primary;
+		border-bottom: 1px solid $border;
+		@include transition(all .3s ease-out );
+		i{
+			display: inline-block;
+			width: 20px;
+		}
+	}
+	>a.toggle{
+		position: relative;
+		z-index: 300;
+		@include backface-visibility(hidden);
+		@include transform-style(preserve-3d);
+		@include transform-origin(50%, 0%);
+		@include transition(.1s linear);
+		background-color: lighten($primary, 8%);
+		&:active{
+			 @include rotateX(60deg);
+		}
+		&.active{
+			&:before{
+			 	content: "\f0d8";
+			 }
+		}
+
+		&:before{
+			font-family: 'FontAwesome';
+			content: '\f0d7';
+			font-size: 1.3em;
+			color: darken($primary, 20%);
+			text-shadow:0 1px 0 rgba(255,255,255,.3);
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 59px;
+			line-height: 60px;
+			width: 60px;
+			text-align: center;
+			display: block;
+			border-left: 1px solid $border;
+		}
+	}
+	ul{
+		position: absolute;
+		height: 100%;
+		top: 0;
+		display: block;
+		width: 100%;
+		li{
+			margin: 0 auto;
+			@include transition(all, .3s ease-out);
+			position: absolute;
+			top: 0;
+			z-index: 0;
+			width:100%;
+      a:hover{
+			  background-color: lighten($primary, 5%);
+			  color: lighten($primary, 44%);
+		  }
+			&.active{
+				a{
+					color: lighten($primary, 20%);
+					background-color: darken($primary, 5%);
+					cursor: default;
+				}
+			}
+			&.closed{
+				a:hover{
+					cursor: default;
+					background-color: $primary;
+				}
+			}
+		}
+	}
+}

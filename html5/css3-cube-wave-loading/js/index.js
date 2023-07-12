@@ -1,0 +1,2 @@
+//lettering js
+$(".loading").lettering();

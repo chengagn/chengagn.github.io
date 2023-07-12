@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    background: linear-gradient(to top,#29323c,#485563);
+}
+.container{
+    width: 500px;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-45%,-50%);
+    color: #fff;
+    font-weight: 300;
+    /* 大写 */
+    text-transform: uppercase;
+    /* 设置视距 */
+    perspective: 1300px;
+}
+input{
+    display: none;
+}
+.labels{
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.tab{
+    width: 100px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+}
+.tab:nth-child(1){
+    background-color: #00b4db;
+}
+.tab:nth-child(2){
+    background-color: #009bc5;
+}
+.tab:nth-child(3){
+    background-color: #007ba4;
+}
+.cube{
+    position: relative;
+    flex: 1;
+    /* 开启3D */
+    transform-style: preserve-3d;
+    /* 设置过渡效果 */
+    transition: transform 0.5s ease-in;
+}
+.tab-content{
+    width: 95%;
+    height: 230px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: red;
+}
+.tab-content h1{
+    font-size: 28px;
+    font-weight: 300;
+}
+.tab-content p{
+    font-size: 14px;
+    font-weight: 100;
+}
+.tab-content:nth-child(1){
+    background-color: #00b4db;
+    transform: rotateX(-270deg) translateY(-115px);
+    transform-origin: top center;
+}
+.tab-content:nth-child(2){
+    background-color: #009bc5;
+    transform: translateZ(115px);
+}
+.tab-content:nth-child(3){
+    background-color: #007ba4;
+    transform: rotateX(-90deg) translateY(115px);
+    transform-origin: bottom center;
+}
+#tab_top:checked ~ .cube{
+    transform: rotateX(-90deg);
+}
+#tab_middle:checked ~ .cube{
+    transform: rotateX(0deg) translateY(10px);
+}
+#tab_bottom:checked ~ .cube{
+    transform: rotateX(90deg);
+}

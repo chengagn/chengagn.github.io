@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery实现左右滑动的个人名片焦点图DEMO演示</title>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<div class="bodyCon08"><!--学员-->
+	<div class="students">
+		
+		  <div id="four_flash">
+			<div class="flashBg">
+				<ul class="mobile">
+					<li>
+						<img src="images/senke_xy00.jpg" />
+						<dd>高同学</dd>
+						<p>2013年CPA暑期班学员，一年通过5门课程</p>
+						<a href=""></a>
+					</li>
+					<li>
+						<img src="images/senke_xy01.jpg" />
+						<dd>李同学</dd>
+						<p>2014年CPA周末旗舰班学员；1年通过4门课程</p>
+						<a href=""></a>
+					</li>
+					<li>
+						<img src="images/senke_xy02.jpg" />
+						<dd>丁同学</dd>
+						<p>现就职某会计师师事务所<br/>2012年CPA学员，3年通过6门课程</p>
+						<a href=""></a>
+					</li>
+					<li>
+						<img src="images/senke_xy03.jpg" />
+						<dd>宋同学</dd>
+						<p>2013年会计证、CPA长线周末班学员，2014年通过4门课程；</p>
+						<a href=""></a>
+					</li>
+					<li>
+						<img src="images/senke_xy04.jpg" />
+						<dd>战同学</dd>
+						<p>2012年北京会计初级金榜，2014年会计中级高分一次通过</p>
+						<a href=""></a>
+					</li>
+					<li>
+						<img src="images/senke_xy05.jpg" />
+						<dd>于同学</dd>
+						<p>2014年会计中级学员，1次性通过中级全科</p>
+						<a href=""></a>
+					</li>
+
+				</ul>
+			</div>
+			<div class="but_left"><img src="images/qianxleft.png" /></div>
+			<div class="but_right"><img src="images/qianxr.png" /></div>
+		  </div>
+		  
+	</div>
+</div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+//学员
+var _index5=0;
+$("#four_flash .but_right img").click(function(){
+	_index5++;
+	var len=$(".flashBg ul.mobile li").length;
+	if(_index5+5>len){
+		$("#four_flash .flashBg ul.mobile").stop().append($("ul.mobile").html());
+	}
+	$("#four_flash .flashBg ul.mobile").stop().animate({left:-_index5*326},1000);
+	});
+
+	
+$("#four_flash .but_left img").click(function(){
+	if(_index5==0){
+		$("ul.mobile").prepend($("ul.mobile").html());
+		$("ul.mobile").css("left","-1380px");
+		_index5=6
+	}
+	_index5--;
+	$("#four_flash .flashBg ul.mobile").stop().animate({left:-_index5*326},1000);
+	});
+</script>	
+
+<div style="text-align:center;clear:both;">
+<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+<script src="/follow.js" type="text/javascript"></script>
+</div>
+</body>
+</html>

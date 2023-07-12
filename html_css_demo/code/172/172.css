@@ -1,0 +1,315 @@
+*{
+    /* 初始化 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* 100%窗口宽高 */
+    height: 100vh;
+    /* 弹性布局 水平+垂直居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 溢出隐藏 */
+    overflow: hidden;
+    /* 设置视距 */
+    perspective: 500px;
+}
+div{
+    /* 开启3D */
+    transform-style: preserve-3d;
+}
+/* 大海 */
+.sea{
+    width: 600px;
+    height: 600px;
+    /* 绝对定位 居中 */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+/* 蓝色海面 */
+.sea .surface{
+    width: 100%;
+    height: 100%;
+    background-color: #2be3fa;
+    position: absolute;
+    overflow: hidden;
+    /* 执行两个动画:动画名(圆角变化) 时长 加速后减速 无限次播放 来回轮流, 动画名(转动) 时长 线性的 无限次播放 */
+    animation: surface 13s ease-in-out infinite alternate, rotateZ 20s linear infinite;
+}
+/* 船 */
+.ship{
+    /* 绝对定位 居中 */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    /* 区域内的元素都会产生投影 */
+    filter: drop-shadow(-30px,40px,0,rgba(0,0,0,0.1));
+}
+.ship .rotate{
+    transform: rotateZ(10deg);
+    /* 执行船转动动画 */
+    animation: ship 30s linear infinite alternate;
+}
+/* 路飞 */
+.ship .human{
+    position: absolute;
+    left: 40px;
+    top: 0;
+}
+/* 帽子 */
+.ship .human .hat{
+    width: 30px;
+    height: 30px;
+    background-color: #f0f09e;
+    border-radius: 100%;
+    /* 执行帽子动画 */
+    animation: hat 1s ease-in-out infinite alternate;
+}
+.ship .human .hat::before{
+    content: "";
+    width: 16px;
+    height: 16px;
+    border: 1px solid #d9845d;
+    border-radius: 100%;
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    transform-style: preserve-3d;
+    transform: translateZ(5px);
+}
+/* 腿 */
+.ship .human .leg{
+    width: 20px;
+    height: 8px;
+    background-color: #0849a3;
+    border-radius: 40%;
+    position: absolute;
+}
+.ship .human .leg::before{
+    content: "";
+    width: 5px;
+    height: 7px;
+    background-color: #fff;
+    border-radius: 40%;
+    position: absolute;
+}
+.ship .human .leg.left{
+    left: -10px;
+    top: 16px;
+    transform: rotateZ(-5deg);
+}
+.ship .human .leg.right{
+    left: -10px;
+    top: 6px;
+    transform: rotateZ(5deg);
+}
+/* 船体 */
+.ship .body{
+    position: relative;
+}
+.ship .body .base{
+    width: 100px;
+    height: 30px;
+    background-color: #d9845d;
+    border-radius: 45%;
+}
+.ship .body .base::before{
+    content: "";
+    width: 96px;
+    height: 26px;
+    background-color: #dead5e;
+    position: absolute;
+    border-radius: 45%;
+    left: 2px;
+    top: 2px;
+}
+/* 前后两块木板 */
+.ship .body .board{
+    width: 10px;
+    height: 20px;
+    background-color: #d9845d;
+    border-radius: 2px;
+    position: absolute;
+    top: 5px;
+}
+.ship .body .board.front{
+    right: 20px;
+}
+.ship .body .board.back{
+    left: 20px;
+}
+/* 波浪 */
+.ship .body .waves{
+    position: absolute;
+}
+.ship .body .waves .wave{
+    position: absolute;
+    /* 执行波浪动画 */
+    animation: wave 2s linear infinite;
+}
+/* 白色浪花 */
+.ship .body .waves .wave .graphic{
+    background-color: #fff;
+    /* 执行圆角变化+转动动画 */
+    animation: surface 2s ease-in-out infinite alternate, rotateZ 6s linear infinite;
+}
+/* 船体波浪 */
+.ship .body .waves .bodywaves .wave{
+    left: var(--left);
+    top: var(--top);
+    /* 动画延迟 */
+    animation-delay: calc(var(--delay) * -1);
+}
+.ship .body .waves .bodywaves .wave .graphic{
+    width: var(--width);
+    height: var(--height);
+}
+/* 船桨波浪 */
+.ship .body .waves .oarwaves .wave{
+    left: var(--left);
+    top: var(--top);
+    /* 动画延迟 */
+    animation-delay: calc(var(--delay) * -1);
+}
+.ship .body .waves .oarwaves .wave .graphic{
+    width: var(--width);
+    height: var(--height);
+}
+/* 接下来画船桨 */
+.ship .oars{
+    position: absolute;
+    left: 50px;
+    top: -30px;
+    transform: translateZ(10px);
+}
+.ship .oars .graphic{
+    width: 3px;
+    height: 40px;
+    background-color: #d9845d;
+    position: relative;
+    /* 执行船桨翻动动画 */
+    animation: oarGraphic 1s ease-in-out infinite alternate;
+}
+.ship .oars .graphic::before{
+    content: "";
+    width: 9px;
+    height: 15px;
+    background-color: #d9845d;
+    position: absolute;
+    left: -3px;
+    top: 0;
+    border-radius: 5px 5px 100% 100%;
+}
+.ship .oars .oar{
+    position: absolute;
+    left: 50%;
+    top: 0;
+}
+.ship .oars .oar.right{
+    transform-origin: 50% 45px;
+    transform: scaleY(-1);
+}
+/* 加点细节 */
+.ship .oars .row{
+    transform-origin: 50% 35px;
+    /* 执行船桨划动动画 */
+    animation: row 1s ease-in-out infinite alternate;
+}
+.ship .oars .depth{
+    transform-origin: 50% 35px;
+    /* 执行船桨深度变化动画 */
+    animation: depth 1s ease-in-out infinite alternate;
+    /* 动画延迟 */
+    animation-delay: -500ms;
+}
+
+/* 定义动画 */
+/* 圆角变化动画 */
+@keyframes surface {
+    0%{
+        border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+    }
+    25%{
+        border-radius: 65% 35% 51% 49%/49% 52% 48% 51%;
+    }
+    50%{
+        border-radius: 42% 58% 28% 72%/65% 34% 66% 35%;
+    }
+    75%{
+        border-radius: 34% 66% 63% 37%/77% 38% 62% 23%;
+    }
+    100%{
+        border-radius: 24% 76% 72% 28%/53% 68% 32% 47%;
+    }
+}
+/* 旋转动画 */
+@keyframes rotateZ {
+    0%{
+        transform: rotateZ(0);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+/* 船的动画 */
+@keyframes ship {
+    0%{
+        transform: rotateZ(20deg);
+    }
+    100%{
+        transform: rotateZ(-20deg);
+    }
+}
+/* 帽子动画 */
+@keyframes hat {
+    0%{
+        transform: translateZ(30px) translateX(-5px) rotateY(-20deg);
+    }
+    100%{
+        transform: translateZ(30px) translateX(0) rotateY(20deg);
+    }
+}
+/* 波浪动画 */
+@keyframes wave {
+    0%{
+        transform: translateX(0) scale(0);
+    }
+    10%{
+        transform: translateX(-10px) scale(1);
+    }
+    100%{
+        transform: translateX(-130px) scale(0);
+    }
+}
+/* 船桨翻动动画 */
+@keyframes oarGraphic {
+    0%{
+        transform: rotateY(-60deg);
+    }
+    100%{
+        transform: rotateY(-110deg);
+    }
+}
+/* 船桨划动动画 */
+@keyframes row {
+    0%{
+        transform: rotateZ(20deg);
+    }
+    100%{
+        transform: rotateZ(-50deg);
+    }
+}
+/* 船桨深度变化 */
+@keyframes depth {
+    0%{
+        transform: rotateX(-20deg);
+    }
+    100%{
+        transform: rotateX(30deg);
+    }
+}

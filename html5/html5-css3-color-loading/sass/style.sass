@@ -1,0 +1,39 @@
+body
+  overflow: hidden
+  background: #333336
+  text-transform: uppercase
+  font-family: 'Helvetica Neue', sans-serif
+canvas
+  position: relative
+  z-index: 100
+.background,.foreground
+  position: absolute
+  top: 50%
+  left: 50%
+  border-radius: 50%
+.background
+  width: 220px
+  height: 220px
+  background: rgba(0,0,0,0.35)
+  display: block
+  margin: -110px 0 0 -110px
+  box-shadow: inset 1px 1px 4px rgba(0,0,0,0.5), 1px 1px 4px rgba(255,255,255,0.2)
+.foreground
+  width: 80px
+  height: 80px
+  margin: -40px 0 0 -40px
+  background: #333336
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.5)
+h1
+  position: absolute
+  display: block
+  width: 100%
+  text-align: center
+  font-weight: 100
+  font-size: 18px
+  letter-spacing: 6px
+  top: 85%
+  color: #e0e0ee
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5)
+  text-align: center
+  z-index: 0

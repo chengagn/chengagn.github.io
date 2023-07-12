@@ -1,0 +1,29 @@
+.container
+  %h1 Guided tour tooltip
+  %span.close
+  
+  .slider-container
+    .slider-turn
+      %p Guided tour tooltip inspired by Jonathan Moreira
+      %p 
+        Dribbble shot visible at
+        %a{:href => "http://dribbble.com/shots/1216346-Guided-tour-tooltip", :title => "Dribbble shot", :target => "_blank"} this link
+      %p Codepen by Yoann Helin
+      %p 
+        %a{:href => "https://twitter.com/YoannHELIN", :title => "Twitter", :target => "_blank"} Twitter : @YoannHELIN
+        %br
+        %a{:href => "http://yoannhelin.fr", :title => "Book", :target => "_blank"} Book : Yoannhelin.fr
+      %p Thank you !
+
+  .bottom
+    .step
+      %span
+      %ul
+        %li{:data => {'num' => '1'}}
+        %li{:data => {'num' => '2'}}
+        %li{:data => {'num' => '3'}}
+        %li{:data => {'num' => '4'}}
+        %li{:data => {'num' => '5'}}
+    %button.btn Next
+%button{:class => "open"}
+  Open

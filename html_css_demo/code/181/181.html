@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <title>Canvas图片滑块拖动验证码</title>
+    <link rel="stylesheet" href="181.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="captcha" style="position: relative;">
+            <!-- <canvas width="310" height="155"></canvas>
+            <div class="refresh-icon"></div>
+            <canvas width="62" height="155" class="block"></canvas>
+            <div class="slider-container">
+                <div class="slider-mask">
+                    <div class="slider">
+                        <span class="slider-icon"></span>
+                    </div>
+                </div>
+                <span class="slider-text">向右滑动滑块填充拼图</span>
+            </div> -->
+        </div>
+        <div id="msg"></div>
+    </div>
+</body>
+
+</html>
+
+<script src="181.js"></script>
+<script>
+    captcha.init(document.getElementById('captcha'),function(){
+        document.getElementById('msg').innerHTML='验证成功';
+        setTimeout(() => {
+            document.getElementById('msg').innerHTML='';
+        }, 2000);
+    },function(){
+        document.getElementById('msg').innerHTML='验证失败';
+        setTimeout(() => {
+            document.getElementById('msg').innerHTML='';
+        }, 1000);
+    })
+</script>

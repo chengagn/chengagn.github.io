@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* 100%窗口宽高 */
+    width: 100vw;
+    height: 100vh;
+    /* 弹性布局 水平+垂直居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ce363e;
+    /* 溢出隐藏 */
+    overflow: hidden;
+    color: #fff;
+    /* 等宽字体 */
+    font-family: monospace;
+    /* 字体大写 */
+    text-transform: uppercase;
+    font-size: 50px;
+}
+.bottle{
+    /* 相对定位 */
+    position: relative;
+    /* 1em=1*font-size */
+    /* 在这里：11em=11*50px=550px */
+    width: 11em;
+    height: 11em;
+    /* 设置视距 */
+    perspective: 25em;
+}
+.bottle-sides,
+.bottle-side{
+    /* 绝对定位 */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    /* 开启3D效果 */
+    transform-style: preserve-3d;
+}
+.bottle-sides{
+    width: 100%;
+    height: 100%;
+    top: 10%;
+    transform: rotateZ(90deg) rotateX(-90deg);
+    /* 执行动画：动画名 时长 线性 无限次播放 */
+    animation: spin 1s linear infinite;
+}
+.bottle-side{
+    /* --rx是自定义属性，在这之前已经设置好了 */
+    /* 设置Y轴偏移量+X轴旋转角度 */
+    transform: translateY(-50%) rotateX(var(--rx));
+}
+.bottle-side span{
+    display: inline-block;
+    /* ch是一个相对于数字0的大小，1ch=1个数字0的宽度 */
+    width: 1ch;
+    /* 隐藏旋转元素的背面 */
+    backface-visibility: hidden;
+}
+/* 接下来分别设置每一个span的Z轴偏移量+Y轴旋转角度+Y轴缩放 */
+.bottle-side span:nth-child(1){
+    transform: translateZ(2ch) rotateY(0deg) scaleY(1);
+}
+.bottle-side span:nth-child(2){
+    transform: translateZ(2ch) rotateY(0deg) scaleY(1);
+}
+.bottle-side span:nth-child(3){
+    transform: translateZ(2.25ch) rotateY(-30deg) scaleY(1);
+}
+.bottle-side span:nth-child(4){
+    transform: translateZ(2.75ch) rotateY(-30deg) scaleY(1.3);
+}
+.bottle-side span:nth-child(5){
+    transform: translateZ(3.25ch) rotateY(-30deg) scaleY(1.5);
+}
+.bottle-side span:nth-child(6){
+    transform: translateZ(3.5ch) rotateY(0deg) scaleY(1.75);
+}
+.bottle-side span:nth-child(7){
+    transform: translateZ(3.5ch) rotateY(0deg) scaleY(1.75);
+}
+.bottle-side span:nth-child(8){
+    transform: translateZ(3.5ch) rotateY(0deg) scaleY(1.75);
+}
+.bottle-side span:nth-child(9){
+    transform: translateZ(3.3ch) rotateY(15deg) scaleY(1.5);
+}
+.bottle-side span:nth-child(10){
+    transform: translateZ(3ch) rotateY(15deg) scaleY(1.4);
+}
+.bottle-side span:nth-child(11){
+    transform: translateZ(2.8ch) rotateY(0deg) scaleY(1.3);
+}
+.bottle-side span:nth-child(12){
+    transform: translateZ(2.8ch) rotateY(0deg) scaleY(1.3);
+}
+.bottle-side span:nth-child(13){
+    transform: translateZ(3ch) rotateY(-15deg) scaleY(1.4);
+}
+.bottle-side span:nth-child(14){
+    transform: translateZ(3.3ch) rotateY(-15deg) scaleY(1.5);
+}
+.bottle-side span:nth-child(15){
+    transform: translateZ(3.5ch) rotateY(0deg) scaleY(1.75);
+}
+.bottle-side span:nth-child(16){
+    transform: translateZ(3.5ch) rotateY(0deg) scaleY(1.75);
+}
+.bottle-side span:nth-child(17){
+    transform: translateZ(3.25ch) rotateY(15deg) scaleY(1.5);
+}
+
+/* 定义动画 */
+@keyframes spin {
+    0%{
+        transform: rotateZ(90deg) rotateX(-90deg);
+    }
+    100%{
+        transform: rotateZ(90deg) rotateX(-54deg);
+    }
+}

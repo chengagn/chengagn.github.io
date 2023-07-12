@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery对话框插件 支持拖拽DEMO演示</title>
+<link rel="Stylesheet" type="text/css" href="css/DialogBySHF.css" />
+<style type="text/css">
+input[type='button']{margin:100px 20px;padding: 10px;}
+</style>
+</head>
+<body>
+<center><br/>
+    <input type="button" value="弹出提示框" id="btnAlert" />
+    <input type="button" value="弹出确认框" id="btnConfirm" />
+    <input type="button" value="弹出iframe" id="btnDialog" />
+</center>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/DialogBySHF.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnAlert").click(function () {
+            $.DialogBySHF.Alert({ Width: 350, Height: 200, Title: "HTML5资源教程", Content: '你好，这是弹出提示，即JS中的alert', ConfirmFun: test });
+        })
+        $("#btnConfirm").click(function () {
+            $.DialogBySHF.Confirm({ Width: 350, Height: 200, Title: "提示信息", Content: '你好，这是确认信息，类似于JS中的confirm', ConfirmFun: test, CancelFun: testCancel });
+        })
+        $("#btnDialog").click(function () {
+            $.DialogBySHF.Dialog({ Width: 1024, Height: 500, Title: "HTML5资源教程", URL: 'http://www.html5tricks.com' });
+        })
+    })
+    function test() {
+        $.DialogBySHF.Alert({ Width: 350, Height: 200, Title: "确认后执行方法", Content: '确认后执行的方法' });
+    }
+    function testCancel() {
+        $.DialogBySHF.Alert({ Width: 350, Height: 200, Title: "取消后执行方法", Content: '取消后执行的方法' });
+    }
+</script>
+
+</body>
+</html>

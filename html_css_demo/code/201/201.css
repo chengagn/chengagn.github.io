@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6eb6ff;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    color: #fff;
+}
+.container h1{
+    width: 260px;
+}
+.container input{
+    width: 260px;
+    height: 50px;
+    color: #000;
+    border: 2px solid #fff;
+    background-color: #fff;
+    border-radius: 25px;
+    outline: none;
+    text-indent: 15px;
+    font-size: 18px;
+    margin: 20px 0;
+}
+.container input::placeholder{
+    color: #aaa;
+}
+.container button{
+    width: 260px;
+    height: 50px;
+    border: 2px solid #fff;
+    background: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    /* 过渡效果 */
+    transition: 0.2s;
+}
+.container button:hover{
+    background-color: #fff;
+    color: #6eb6ff;
+    cursor: pointer;
+}
+/* 输入框验证失败时 */
+.container input:invalid{
+    color: #ff5f5f;
+    border-color: #ff5f5f;
+    background-color: #ffdfdf;
+    /* 执行动画：动画名 时长 加速后减速 重复执行2次 */
+    animation: shake 0.2s ease-in-out 2;
+}
+
+/* 定义动画 */
+@keyframes shake {
+    0%{
+        margin-left: 0;
+    }
+    25%{
+        margin-left: 8px;
+    }
+    50%{
+        margin-left: 0;
+    }
+    75%{
+        margin-left: -8px;
+    }
+    100%{
+        margin-left: 0;
+    }
+}

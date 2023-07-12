@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery单选多选按钮选中美化特效 - 站长素材</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+<div style="text-align:center;clear:both">
+	<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+	<script src="/follow.js" type="text/javascript"></script>
+</div>
+<!-- 第一个按钮 -->
+<div class="wrap" a="off">
+	<div></div>
+</div>
+<!-- 第二个按钮 -->
+<div class="wrap0" a="off">
+	<div></div>
+</div>
+<!-- 第三个按钮 -->
+<div class="wrap1" a="off">
+	<div></div>
+</div>
+<!-- 第四个按钮 -->
+<div class="wrap4" a="off">
+	<div>
+		<div></div>
+	</div>
+</div>
+<!-- 第五个按钮 -->
+<div class="wrap5" a="off">
+	<span>ON</span>
+	<span>OFF</span>
+	<div></div>
+</div>
+<!-- 第六个按钮 -->
+<div class="wrap6" a="off">
+	<div></div>
+</div>
+<!-- 第七个按钮 -->
+<div class="wrap-con">
+	<div a="off">
+		<div></div>
+	</div>
+	<div a="off">
+		<div></div>
+	</div>
+	<div a="off">
+		<div></div>
+	</div>
+	<div a="off">
+		<div></div>
+	</div>
+	<div a="off">
+		<div></div>
+	</div>
+</div>
+<div class="wrap7" a="off">
+	<span>全选</span>
+	<span>反选</span>
+	<span>取消</span>
+	<div></div>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+	$(".wrap").mousedown(function(event) {
+		if ($(".wrap").attr("a") == "off") {
+			$(".wrap div").css({
+				"display" : "block"
+			}),
+			$(".wrap").attr("a","on")
+		}else {
+			$(".wrap div").css({
+				"display" : "none"
+			}),
+			$(".wrap").attr("a","off")
+		}
+	});
+	$(".wrap1").mousedown(function(event) {
+		if ($(".wrap1").attr("a") == "off") {
+			$(".wrap1 div").css({
+				"display" : "block"
+			}),
+			$(".wrap1").attr("a","on")
+		}else {
+			$(".wrap1 div").css({
+				"display" : "none"
+			}),
+			$(".wrap1").attr("a","off")
+		}
+	});
+	$(".wrap0").mousedown(function(event) {
+		if ($(".wrap0").attr("a") == "off") {
+			$(".wrap0 div").css({
+				"display" : "block"
+			}),
+			$(".wrap0").attr("a","on")
+		}else {
+			$(".wrap0 div").css({
+				"display" : "none"
+			}),
+			$(".wrap0").attr("a","off")
+		}
+	});
+	$(".wrap4").mousedown(function(event) {
+		if ($(".wrap4").attr("a") == "off") {
+			$(".wrap4 div div").css({
+				"opacity" : "0.3"
+			}),
+			$(".wrap4").attr("a","on")
+		}else {
+			$(".wrap4 div div").css({
+				"opacity" : "1"
+			}),
+			$(".wrap4").attr("a","off")
+		}
+	});
+	$(".wrap5").mousedown(function(event) {
+		if ($(".wrap5").attr("a") == "off") {
+			$(".wrap5 div").stop().animate({
+				"left" : "98px"
+			},400),
+			$(".wrap5").attr("a","on")
+		}else {
+			$(".wrap5 div").stop().animate({
+				"left" : "2px"
+			},400),
+			$(".wrap5").attr("a","off")
+		}
+	});
+	$(".wrap6").mousedown(function(event) {
+		if ($(".wrap6").attr("a") == "off") {
+			$(".wrap6 div").stop().animate({
+				"left" : "170px"
+			},400),
+			$(".wrap6").attr("a","on")
+		}else {
+			$(".wrap6 div").stop().animate({
+				"left" : "0px"
+			},400),
+			$(".wrap6").attr("a","off")
+		}
+	});
+
+	$(".wrap-con > div").mousedown(function(event) {
+		
+			// var thisIndex = $(this).index()
+			// console.log(thisIndex);
+			if ($(this).attr("a") == "off") {
+				$(this).children("div").css({
+					"display" : "block"
+				});
+				$(this).attr("a","on")
+			}else {
+				$(this).children("div").css({
+					"display" : "none"
+				});
+				$(this).attr("a","off")
+			}
+		});
+
+	$(".wrap7 span").mousedown(function(event) {
+		var thisIndex = $(this).index();
+		var divLeft = thisIndex*100 + "px";
+		console.log(thisIndex);
+		console.log(divLeft);
+		$(".wrap7 div").animate({
+			"left" : divLeft
+		}, 300);
+		if (thisIndex == 0) {
+			$(".wrap-con div div").css({
+				"display" : "block"
+			});
+			$(this).attr("a","on")
+		};
+		if (thisIndex == 2) {
+			$(".wrap-con div div").css({
+				"display" : "none"
+			});
+			$(this).attr("a","off")
+		};
+		if (thisIndex == 1) {
+			if ($(".wrap-con > div").attr("a") == "off") {
+				$(".wrap-con > div").children('div').css({
+					"display" : "block"
+				});
+				$(this).attr("a","on")
+			}
+			if ($(".wrap-con > div").attr("a") == "on") {
+				$(".wrap-con > div").children("div").css({
+					"display" : "none"
+				});
+				$(this).attr("a","off")
+			}
+
+		};
+	});
+	
+	
+</script>
+
+<div style="text-align:center;clear:both">
+<script src="/gg_bd_ad_720x90-2.js" type="text/javascript"></script>
+</div>
+</body>
+</htm>

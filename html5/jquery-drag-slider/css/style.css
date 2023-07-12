@@ -1,0 +1,16 @@
+.gallery {
+  background: black;
+}
+
+.gallery-cell {
+  width: 100%;
+  height: 400px;
+  
+}
+
+.gallery-cell img {
+  display: block;
+  max-height: 400px;
+  max-width: 100%;
+  margin: 0 auto;
+}

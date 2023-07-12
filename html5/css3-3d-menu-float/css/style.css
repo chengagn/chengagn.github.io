@@ -1,0 +1,284 @@
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+
+  background: #434A54;
+
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 16px;
+  color: #ffffe2;
+  -webkit-font-smoothing: antialiased;
+}
+
+#nav {
+  
+  -webkit-perspective: 1000px;
+}
+
+#menu {
+  height: 80px;
+  position: relative;
+  margin: 50px auto;
+  width: 900px;
+  background-color: rgb(0, 0, 0);
+
+  -webkit-transform-style: preserve-3d;
+}
+
+#menu-no-preserve {
+  height: 80px;
+  position: relative;
+  margin: 50px auto;
+  width: 900px;
+}
+
+#menu .face {
+  background-color: rgb(0, 0, 0);
+  height: 80px;
+  position: absolute;
+  width: 900px;
+}
+
+#menu .one  {
+  background: rgb(0, 0, 0);
+  background: blue;
+  -webkit-transform: rotateX(90deg) translateZ(40px);
+}
+
+#menu .two {
+  background-color: rgb(235, 41, 158);
+  -webkit-transform: translateZ(40px);
+
+  background: #000000; /* Old browsers */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#000000), color-stop(100%,#141414)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  #000000 0%,#141414 100%); /* Chrome10+,Safari5.1+ */
+  background: linear-gradient(to right,  #000000 0%,#141414 100%); /* W3C */
+}
+
+#menu .three {
+  background: rgb(252, 209, 22);
+  background: red;
+  -webkit-transform: rotateY(90deg) translateZ(880px);
+  width: 40px;
+}
+
+#menu .four {
+  background: rgb(44, 45, 213);
+  -webkit-transform: rotateY(180deg) translateZ(40px);
+}
+
+#menu .five {
+  background: rgb(125, 105, 181);
+  background: red;
+  -webkit-transform: rotateY(-90deg) translateZ(20px);
+  width: 40px;
+}
+
+#menu .six {
+  background: rgb(0, 0, 0);
+  -webkit-transform: rotateX(-90deg) translateZ(40px) rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  #main-nav {
+      width: 930px;
+      height: 80px;
+      position: relative;
+       position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -40px;
+      margin-left: -450px;
+   
+
+      -webkit-perspective: 1200px;
+    }
+
+    #box {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      -webkit-transform-style: preserve-3d;
+    }
+
+    #box .face {
+      display: block;
+      position: absolute;
+
+
+      -webkit-backface-visibility: hidden;
+    }
+
+    #box .front,
+    #box .back {
+      width: 930px;
+      height: 80px;
+    }
+
+    #box .right,
+    #box .left {
+      width: 100px;
+      height: 80px;
+
+    }
+
+    #box .top,
+    #box .bottom {
+      width: 925px;
+      height: 80px;
+
+      line-height: 80px;
+    }
+
+
+
+    #box .front  {
+      /*-webkit-transform: translateZ( 50px );*/
+      /*background: -webkit-linear-gradient(left,  #000000 0%,#141414 100%); */
+    }
+    #box .back   {
+      -webkit-transform: rotateX( -180deg ) translateZ(  50px );
+      background: #000;
+    }
+    #box .right {
+      -webkit-transform: rotateY(   90deg ) translateZ( 875px );
+      background: #000;
+    }
+    #box .left {
+      -webkit-transform: rotateY(  -90deg ) translateZ( 50px );
+      background: #000;
+    }
+    #box .top {
+      -webkit-transform: rotateX(   90deg ) translateZ( 40px );
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#383838), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top,  #383838 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+
+    }
+    #box .bottom {
+      -webkit-transform: rotateX(  -90deg ) translateZ( 40px );
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#000000), color-stop(100%,#383838)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top,  #000000 0%,#383838 100%); /* Chrome10+,Safari5.1+ */
+    }
+
+
+
+
+    .item-con {
+      width: 110px;
+      height: 80px;
+      float: left;
+      background: #000;
+    }
+
+    .item-con.logo {
+      -webkit-transform: translateZ( 50px );
+      width: 154px;
+      background: transparent;
+    }
+
+    .item {
+      width: 110px;
+      height: 80px;
+      position: absolute;
+      -webkit-transform-style: preserve-3d;
+      -webkit-transition: all 250ms;
+      font-style: italic;
+    }
+
+    .item:hover {
+      -webkit-transform: translateZ(100px);
+      color: #d6a53c;
+    }
+
+    .item:hover .arrow-hover {
+      opacity: 1;
+    }
+
+    .item .i-face {
+      display: block;
+      position: absolute;
+      line-height: 1;
+      font-size: 19px;
+      padding: 17px 20px;
+
+      -webkit-backface-visibility: hidden;
+    }
+
+    .item .arrow-hover {
+      background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/40480/arrow-hover.png');
+      width: 20px;
+      height: 24px;
+      position: absolute;
+      right: 11px;
+      top: 30px;
+      opacity: 0;
+
+      -webkit-transition: all 250ms;
+    }
+
+    .item .i-front,
+    .item .i-back {
+      width: 110px;
+      height: 80px;
+    }
+
+    .item .i-right,
+    .item .i-left {
+      width: 100px;
+      height: 80px;
+    }
+
+    .item .i-top,
+    .item .i-bottom {
+      width: 110px;
+      height: 100px;
+    }
+
+
+    .item .i-front  {
+      -webkit-transform: translateZ( 50px );
+      background: -webkit-linear-gradient(left,  #000000 0%,#131313 80%); /* Chrome10+,Safari5.1+ */
+    }
+    .item .i-back   {
+      -webkit-transform: rotateX( -180deg ) translateZ(  50px );
+      background: #000;
+    }
+    .item .i-right {
+      -webkit-transform: rotateY(   90deg ) translateZ( 60px );
+      background: -webkit-linear-gradient(left,  #000000 0%,#131313 80%); /* Chrome10+,Safari5.1+ */
+    }
+    .item .i-left {
+      -webkit-transform: rotateY(  -90deg ) translateZ( 50px );
+      background: -webkit-linear-gradient(left,  #000000 0%,#131313 80%); /* Chrome10+,Safari5.1+ */
+    }
+    .item .i-top {
+      -webkit-transform: rotateX(   90deg ) translateZ( 50px );
+      background: -webkit-linear-gradient(top,  #131313 0%,#000000 80%); /* Chrome10+,Safari5.1+ */
+
+    }
+    .item .i-bottom {
+      -webkit-transform: rotateX(  -90deg ) translateZ( 30px );
+      background: -webkit-linear-gradient(top,  #000000 0%,#131313 80%); /* Chrome10+,Safari5.1+ */
+    }

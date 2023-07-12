@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* 100%窗口宽高 */
+    height: 100vh;
+    /* 弹性布局 水平+垂直居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 渐变背景 */
+    background: linear-gradient(to top,#ff9a9e,#fad0c4);
+    /* 溢出隐藏 */
+    overflow: hidden;
+    /* 禁止选取 */
+    user-select: none;
+}
+.love{
+    position: absolute;
+    margin: -250px 0 0 -250px;
+}
+.love-hor{
+    /* 执行水平动画: 动画名 时长 加速后减速 无限次播放 来回轮流播放 */
+    animation: hor 10s ease-in-out infinite alternate;
+    /* 设置动画延迟，--d是自定义属性，可通过var函数对其调用 */
+    animation-delay: calc(var(--d) * 1s);
+}
+.love-ver{
+    /* 执行垂直动画：动画名 时长 线性 无限次播放 */
+    animation: ver 20s linear infinite;
+    /* 设置动画延迟 */
+    animation-delay: calc(var(--d) * 1s);
+}
+.love-text{
+    color: #fff;
+    text-shadow: 0 0 10px #ebeb6d;
+    letter-spacing: 2px;
+    font-size: 22px;
+    transform: translateY(-100%) rotateZ(-30deg);
+}
+
+/* 定义动画 */
+/* 水平动画 */
+@keyframes hor {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(500px);
+    }
+}
+/* 垂直动画 */
+@keyframes ver {
+    0%{
+        transform: translateY(180px);
+    }
+    10%{
+        transform: translateY(45px);
+    }
+    15%{
+        transform: translateY(4.5px);
+    }
+    18%{
+        transform: translateY(0px);
+    }
+    20%{
+        transform: translateY(4.5px);
+    }
+    22%{
+        transform: translateY(34px);
+    }
+    24%{
+        transform: translateY(64px);
+    }
+    25%{
+        transform: translateY(112.5px);
+    }
+    26%{
+        transform: translateY(64px);
+    }
+    28%{
+        transform: translateY(34px);
+    }
+    30%{
+        transform: translateY(4.5px);
+    }
+    32%{
+        transform: translateY(0px);
+    }
+    35%{
+        transform: translateY(4.5px);
+    }
+    40%{
+        transform: translateY(45px);
+    }
+    50%{
+        transform: translateY(180px);
+    }
+    71%{
+        transform: translateY(428px);
+    }
+    72%{
+        transform: translateY(441px);
+    }
+    75%{
+        transform: translateY(450px);
+    }
+    77%{
+        transform: translateY(441px);
+    }
+    79%{
+        transform: translateY(428px);
+    }
+    100%{
+        transform: translateY(180px);
+    }
+}

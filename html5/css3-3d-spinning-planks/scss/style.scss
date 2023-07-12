@@ -1,0 +1,105 @@
+@import "compass/css3";
+
+/* VARIABLES */
+$numrows: 15; /*Should be the same as markup*/
+$duration: 2s;
+$height: 20px;
+$width: 200px;
+$depth: 20px;
+$hue: 37;
+$saturation: 80;
+$stagger: 0.1s;
+
+.container {
+  position: relative;
+  top: $width/2;
+  
+  margin: 0 auto;
+  width: $width*1.5;
+  
+  perspective: 400px;
+  transform-style: preserve-3d;
+  
+  /*animation: camera 3s infinite alternate;*/
+}
+.cuboid {
+  position: relative;
+  
+  height: $height;
+  width: $width;
+  padding-bottom: 10px;
+  
+	transform-style: preserve-3d;
+  animation-name: spin;
+  animation-duration: $duration;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  @for $i from 1 through $numrows {
+    /* Cycle through cuboids, adding the staggers */
+    
+    &:nth-child(#{$i}) {
+      
+      /* Note the '- $duration' after the animation-delays
+       * This prevents planks being stationary at start
+       */
+      animation-delay: $i*$stagger - $duration;
+      /* Cycle through faces adding color delays */
+      @for $n from 1 through 4 {
+        div:nth-child(#{$n}) {
+          animation-delay: $i*$stagger+$n*$duration/4-$duration*2;
+        }
+      }
+  
+    }
+  }
+  div {
+    position: absolute;
+    background-color: hsl($hue, $saturation, 30);
+    backface-visibility: hidden;/* Improves stability */
+  }
+  .front,
+  .left,
+  .back,
+  .right {
+    animation: color $duration/2 infinite linear alternate;
+  }
+  .front,
+  .back {
+    height: $height;
+    width: $width;
+  }
+  .bottom,
+  .top {
+      height: $depth;
+      width: $width;
+  }
+  .left,
+  .right {
+    height: $height;
+    width: $depth;
+  }
+  .front { transform: translateZ($depth/2) }
+  .back { transform: rotateY(180deg) translateZ($depth/2) }
+  .top {
+    transform: rotateX(90deg) translateZ($depth/2);
+    background-color: hsl($hue, $saturation, 70);
+  }
+  .bottom { transform: rotateX(-90deg) translateZ(-$depth/2+$height) }
+  .left { transform: rotateY(-90deg) translateZ($depth/2) }
+  .right { transform: rotateY(90deg) translateZ($width - $depth/2) }
+}
+
+@keyframes spin
+{
+  from { transform: rotateY(0deg) }
+  to { transform: rotateY(360deg) }
+}
+@keyframes color{
+  from { background-color: hsl($hue, $saturation, 70) }
+  to { background-color: hsl($hue, $saturation, 30) }
+}
+@keyframes camera
+{
+  from { transform: rotateX(-40deg) }
+  to { transform: rotateY(40deg) }
+}

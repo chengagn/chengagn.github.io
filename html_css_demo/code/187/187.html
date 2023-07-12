@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <title>浪漫的心形文字动画特效</title>
+    <link rel="stylesheet" href="187.css">
+    <!-- 为了减少代码量，这个案例用到vue的语法 -->
+    <script src="/js/vue.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- --d是CSS的自定义属性 -->
+        <div class="love" v-for="item in 67" :style="{'--d':(item*-1)*0.3}">
+            <div class="love-hor">
+                <div class="love-ver">
+                    <div class="love-text">hello world {{item}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    new Vue({
+        el:'.container'
+    })
+</script>

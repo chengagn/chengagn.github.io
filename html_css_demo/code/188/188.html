@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <title>饮料瓶造型文字旋转特效</title>
+    <link rel="stylesheet" href="188.css">
+    <!-- 引入vue -->
+    <script src="/js/vue.min.js"></script>
+</head>
+
+<body>
+    <div class="bottle">
+        <div class="bottle-sides">
+            <!-- --rx是css自定义属性，这里用来计算bottle-side沿X轴旋转的角度，自定义属性可通过var函数进行调用 -->
+            <div class="bottle-side" v-for="n,i in 6" :style="{'--rx':(i*36)+'deg'}">
+                <span v-for="t in arr">{{t}}</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    new Vue({
+        el:'.bottle',
+        data:{
+            text:'drink more water!',
+            arr:[]
+        },
+        mounted(){
+            // 把文本拆分为单个字符组成的数组
+            this.arr=this.text.split('');
+            // console.log(this.arr);
+        }
+    })
+</script>

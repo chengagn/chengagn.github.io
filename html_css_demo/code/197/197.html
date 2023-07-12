@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彩带圣诞树</title>
+    <link rel="stylesheet" href="197.css">
+    <!-- 引入vue -->
+    <script src="/js/vue.min.js"></script>
+</head>
+<body>
+    <div class="tree">
+        <!-- --开头的属性是CSS的自定义属性，可通过var函数对其调用 -->
+        <div class="tree-light" v-for="(item,index) in 50" :style="{'--appear':index,'--y':2*index,'--rotate':1440-28.8*index,'--radius':12.5-0.25*index,'--speed':index*0.1,'--delay':index*0.05}"></div>
+        <!-- 星星 -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.32 108.44" class="tree-star" style="--delay:50;">
+            <path d="M90.19 104.33L57.12 87.38 24.4 105l5.91-36.69L3.44 42.65l36.72-5.72 16.1-33.5L73.06 36.6l36.83 4.97-26.35 26.21z" fill="none" stroke-width="6.88" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+    </div>
+</body>
+</html>
+
+<script>
+    // 这里是vue的语法
+    new Vue({
+        el:'.tree',
+        data:{}
+    })
+</script>

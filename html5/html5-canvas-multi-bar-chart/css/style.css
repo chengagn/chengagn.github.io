@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.wrap {
+  margin: 0 auto;
+}
+#configure {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 210px;
+  padding: 10px;
+  background-color: grey;
+}
+.input-area {
+  margin-bottom: 10px;
+}
+.input-area label {
+  margin-right: 10px;
+}

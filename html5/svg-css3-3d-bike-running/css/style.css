@@ -1,0 +1,23 @@
+html{
+  height:100%;
+  background: #FC5C7D;
+background: -webkit-linear-gradient(to top, #0d1d61, #a90065);
+background: linear-gradient(to top, #0d1d61, #a90065); 
+  overflow:hidden;
+}
+#codevemberbike{
+  position:absolute;
+  width:80%;
+  max-height:80%;
+  opacity:0;
+}
+#particles-js{
+  position:absolute;
+  width:100%;
+}
+h1{
+  color:white;
+}
+#codevemberbike path:nth-child(even){
+  fill:none;
+}

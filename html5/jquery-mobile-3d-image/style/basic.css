@@ -1,0 +1,73 @@
+body, h1, h2, h3, h4, h5, h6, blockquote, p, pre, dl, dd, menu, ol, ul, caption, th, td, form, fieldset, legend, input, button, textarea, address {
+    margin: 0;
+    padding: 0
+}
+html{
+    overflow-x: hidden;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%
+}
+
+menu, ol, ul {
+    list-style: none
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    font-size: inherit
+}
+
+fieldset, img {
+    border: 0;
+    vertical-align: middle
+}
+
+address, cite, dfn, em, var {
+    font-style: normal
+}
+
+code, kbd, pre, samp {
+    font-family: courier new, courier, monospace
+}
+
+input, button, textarea, select {
+    font-size: 100%
+}
+
+abbr[title] {
+    border-bottom: 1px dotted;
+    cursor: help
+}
+
+a {
+    text-decoration: none
+}
+
+ul {
+    list-style: none;
+}
+
+body, input, button, textarea, select, option, optgroup {
+    font: 14px "Microsoft Yahei"
+}
+
+
+body {
+    width: 100%;
+    height: 100%;
+    background: #eee;
+    font-family: "Microsoft Yahei"/*, Arial, Lucida Grande, Lucida Sans Unicode, Verdana, sans-serif*/;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: " ";
+}
+
+.clearfix:after {
+    clear: both;
+}

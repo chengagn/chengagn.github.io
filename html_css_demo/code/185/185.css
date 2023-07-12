@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #000;
+    overflow: hidden;
+}
+p{
+    width: 1000px;
+    height: 1000px;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 14px;
+    /* 居中 */
+    margin: 0 auto;
+    /* 背景图片 */
+    background: url(/images/luobin.jpg) no-repeat;
+    /* 以区块内的文字作为裁剪区域向外裁剪，文字的背景即为区块的背景，文字之外的区域都将被裁剪掉 */
+    -webkit-background-clip: text;
+    /* 将文字透明镂空 */
+    -webkit-text-fill-color: transparent;
+    /* 灰度滤镜（转黑白） */
+    filter: grayscale(1);
+}

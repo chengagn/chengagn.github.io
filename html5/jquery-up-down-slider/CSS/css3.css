@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+.time1{transition:all ease-out .3s 0s;-webkit-transition:all ease-out .3s 0s;-moz-transition:all ease-out .3s 0s;-o-transition:all ease-out .3s 0s;}
+.timer{
+	transition:background 0.5s;
+	-webkit-transition:background 0.5s;
+	-o-transition:background 0.5s;
+	-moz-transition:background 0.5s;
+	}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>精美的jQuery首屏产品展示焦点图插件DEMO演示</title>
+
+<style type="text/css">
+div,ul,li,a,span,img{margin:0;padding:0;}
+li{list-style:none;}
+#slider{width:790px;height:340px;margin:10% auto;position:relative;}
+.slider_list li{position:absolute;display:none;}
+.slider_list li:first-child{display:block;}
+.slider_icon{position:absolute;z-index:1;left:40%;bottom:20px;font-size:0;padding:4px 8px;border-radius:12px;background-color:hsla(0,0%,100%,.3);}
+.slider_icon i{display:inline-block;width:12px;height:12px;border-radius:50%;margin:0 5px;}
+.btn{background:#fff;}
+.arrow{display:none;width:30px;height:60px;background-color:rgba(0,0,0,.2);position:absolute;top:50%;margin-top:-30px;}
+.prve{left:0;}
+.next{right:0;}
+.arrow span{display:block;width:10px;height:10px;border-bottom:2px solid #fff;border-left:2px solid #fff;}
+.slider_left{margin:25px 0 0 10px;transform:rotate(45deg);}
+.slider_right{margin:25px 0 0 5px;transform:rotate(-135deg);}
+.arrow:hover{background:#444;}
+#slider:hover .arrow{display:block;}
+.btn_act{background:#db192a;}
+</style>
+
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var count = 0;
+	var $li = $("#slider>ul>li");
+	$(".next").click(function(){
+		count++;				
+		if(count == $li.length){
+			count =0;
+		}
+		$li.eq(count).fadeIn().siblings().fadeOut();
+		$(".slider_icon i").eq(count).addClass("btn_act").siblings().removeClass('btn_act');
+		console.log(count);
+	});
+	$(".prve").click(function(){
+		count--;
+		if(count == -1){
+			count = $li.length-1;
+		}
+		console.log(count);
+		$li.eq(count).fadeIn().siblings().fadeOut();
+		$(".slider_icon i").eq(count).addClass("btn_act").siblings().removeClass('btn_act');
+	});
+	$(".slider_icon i").mouseenter(function(){
+		$(this).addClass('btn_act').siblings().removeClass("btn_act");
+		$li.eq($(this).index()).fadeIn().siblings().fadeOut();
+		count = $(this).index();
+	});
+});
+</script>
+
+</head>
+<body>
+
+<div id="slider">
+	<ul class="slider_list">
+		<li><a href="#"><img src="img/59e5df51Na34c52da.jpg"></a></li>
+		<li><a href="#"><img src="img/59e6f772Nde97ca5e.jpg"></a></li>
+		<li><a href="#"><img src="img/59e8ab7dN48b529e7.jpg"></a></li>
+		<li><a href="#"><img src="img/59e89be7N0031c258.jpg"></a></li>
+		<li><a href="#"><img src="img/59e980a2Nc4314079.jpg"></a></li>
+		<li><a href="#"><img src="img/59ed6dd8Ncaee86ed.jpg"></a></li>
+		<li><a href="#"><img src="img/59e99072N4baea8f3.jpg"></a></li>
+		<li><a href="#"><img src="img/598abe52Nb1c8cfe4.jpg"></a></li>
+	</ul>
+	<div class="slider_icon">
+		<i class="btn btn_act"></i>
+		<i class="btn"></i>
+		<i class="btn"></i>
+		<i class="btn"></i>
+		<i class="btn"></i>
+		<i class="btn"></i>
+		<i class="btn"></i>
+		<i class="btn"></i>
+	</div>
+	<a href="javascript:;" class="arrow prve">
+		<span class="slider_left"></span>
+	</a>
+	<a href="javascript:;" class="arrow next">
+		<span class="slider_right"></span>
+	</a>
+</div>
+
+<div style="text-align:center;clear:both">
+<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+<script src="/follow.js" type="text/javascript"></script>
+</div>
+
+</body>
+</html>

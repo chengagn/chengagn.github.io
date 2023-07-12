@@ -1,0 +1,49 @@
+*{
+    /* 初始化 */
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* 100%窗口宽高 */
+    height: 100vh;
+    /* 弹性布局 水平+垂直居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+}
+.list-item{
+    width: 400px;
+    height: 70px;
+    /* 通过var函数调用已经设置好的自定义属性--color，设置背景颜色 */
+    background-color: var(--color);
+    border-radius: 8px;
+    margin: 15px 0;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    /* 光标变移动图标 */
+    cursor: move;
+}
+.list-item img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    object-position: top;
+    margin-right: 20px;
+}
+.list-item span{
+    color: #fff;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+/* 接下来添加拖拽时的样式 */
+.list-item.moving{
+    background-color: transparent;
+    border: 2px dashed #ccc;
+}
+.list-item.moving img,
+.list-item.moving span{
+    display: none;
+}

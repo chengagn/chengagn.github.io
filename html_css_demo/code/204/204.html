@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彩色圆环溶解加载动画</title>
+    <link rel="stylesheet" href="204.css">
+    <!-- 引入vue -->
+    <script src="/js/vue.min.js"></script>
+</head>
+<body>
+    <div class="loader">
+        <i v-for="item,index in 72" :style="{'--rz':(index*5)+'deg','--delay':(4/72*index-4)+'s','--tx':(Math.random(1000)*150)+'px','--ty':(Math.random(1000)*50)+'px','--hue':index*5}"></i>
+    </div>
+</body>
+</html>
+
+<script>
+    new Vue({
+        el:'.loader',
+        data:{}
+    })
+</script>

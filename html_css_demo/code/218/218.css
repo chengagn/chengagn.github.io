@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+.container{
+    display: flex;
+    gap: 16px;
+}
+/* 开关容器 */
+.toggle-wrapper{
+    display: inline-block;
+    position: relative;
+    border-radius: 3.125em;
+    overflow: hidden;
+}
+/* 复选框，隐藏 */
+.toggle-checkbox{
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+/* 开关背景 默认样式（关闭） */
+.toggle-container{
+    display: flex;
+    position: relative;
+    border-radius: inherit;
+    width: 2.5em;
+    height: 1.25em;
+    background-color: #d1d4dc;
+    box-shadow: inset 0.0625em 0 0 #d4d2de,
+    inset -0.0625em 0 0 #d4d2de,
+    inset 0.125em 0.25em 0.125em 0.25em #b5b5c3;
+    transition: all 0.4s;
+}
+.toggle-wrapper.red > .toggle-checkbox:checked + .toggle-container{
+    background-color: #f5233c;
+    box-shadow: inset 0.0625em 0 0 #f5233c,
+    inset -0.0625em 0 0 #f5233c,
+    inset 0.125em 0.25em 0.125em 0.25em #d70026;
+}
+.toggle-wrapper.yellow > .toggle-checkbox:checked + .toggle-container{
+    background-color: #fbc433;
+    box-shadow: inset 0.0625em 0 0 #fbc433,
+    inset -0.0625em 0 0 #fbc433,
+    inset 0.125em 0.25em 0.125em 0.25em #ee9902;
+}
+.toggle-wrapper.blue > .toggle-checkbox:checked + .toggle-container{
+    background-color: #4588ff;
+    box-shadow: inset 0.0625em 0 0 #4588ff,
+    inset -0.0625em 0 0 #4588ff,
+    inset 0.125em 0.25em 0.125em 0.25em #3952f3;
+}
+/* 灰色小球 默认样式（关闭） */
+.toggle-ball{
+    position: relative;
+    border-radius: 50%;
+    width: 1.25em;
+    height: 1.25em;
+    background-image: radial-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0) 16%),
+    radial-gradient(#d2d4dc,#babac2);
+    background-position: -0.25em -0.25em;
+    background-size: auto, calc(100% + 0.25em) calc(100% + 0.25em);
+    background-repeat: no-repeat;
+    box-shadow: 0.25em 0.25em 0.25em #8d889e,
+    inset 0.0625em 0.0625em 0.25em #d1d1d6,
+    inset -0.0625em -0.0625em 0.25em #8c869e;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+/* 彩色小球 打开样式（默认隐藏） */
+.toggle-ball::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    background-position: -0.25em -0.25em;
+    background-size: auto, calc(100% + 0.25em) calc(100% + 0.25em);
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+.toggle-wrapper.red > .toggle-container > .toggle-ball::after{
+    background-image: radial-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0) 16%),
+    radial-gradient(#ff2751,#e0022f);
+    box-shadow: 0.25em 0.25em 0.25em #b70033,
+    inset 0.0625em 0.0625em 0.25em #fe7d7e,
+    inset -0.0625em -0.0625em 0.25em #870002;
+}
+.toggle-wrapper.yellow > .toggle-container > .toggle-ball::after{
+    background-image: radial-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0) 16%),
+    radial-gradient(#f5d05f,#d67f1b);
+    box-shadow: 0.25em 0.25em 0.25em #bc6d00,
+    inset 0.0625em 0.0625em 0.25em #fff27a,
+    inset -0.0625em -0.0625em 0.25em #9f3901;
+}
+.toggle-wrapper.blue > .toggle-container > .toggle-ball::after{
+    background-image: radial-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0) 16%),
+    radial-gradient(#419efe,#4ba2ff);
+    box-shadow: 0.25em 0.25em 0.25em #2634d0,
+    inset 0.0625em 0.0625em 0.25em #8dd5ff,
+    inset -0.0625em -0.0625em 0.25em #1500ac;
+}
+/* 显示彩色小球 */
+.toggle-wrapper > .toggle-checkbox:checked + .toggle-container > .toggle-ball::after{
+    opacity: 1;
+}
+/* 打开状态下小球移动到右侧 */
+.toggle-checkbox:checked + .toggle-container > .toggle-ball{
+    transform: translateX(100%);
+}

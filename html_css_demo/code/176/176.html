@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <title>输入框打字放大特效</title>
+    <link rel="stylesheet" href="176.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>输入框打字特效</h1>
+        <div class="input-box">
+            <input type="text" id="txtMessage" v-model="message">
+            <label for="txtMessage">
+                <span class="input-animate" v-for="m in message2">{{m}}</span>
+            </label>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- 引入vue -->
+<script src="/js/vue.min.js"></script>
+<script src="176.js"></script>

@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #000;
+    /* 禁止选取 */
+    user-select: none;
+}
+.lihuatong{
+    width: 60px;
+    position: absolute;
+    left: 50%;
+    top: 64%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}

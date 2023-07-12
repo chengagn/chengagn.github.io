@@ -1,0 +1,195 @@
+body
+{
+	background:#F0F0F0 url(../img/body_bg.png) repeat-x;
+	margin:0px;
+	padding:0px;
+	font-family:tahoma;
+}
+.main-body{
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+.header-top{
+	height:100px;
+	margin:0px;
+	padding:0px;
+}
+.logo{padding-top:20px; padding-bottom:20px; margin:0px;}
+.shade_banner{
+	height:500px;
+	width:1000px;
+	margin:0px;
+	padding:0px;
+	background:url(../img/shade_bg.png) no-repeat;
+	background-position:bottom;
+}
+.banner{
+	height:380px;
+	width:800px;
+	margin:0px;
+	padding:0px;
+	background:#B7B7B7;
+	border:solid 1px #CCCCCC;
+}
+.content-body{
+	background:url(../img/content_body.png) repeat-x;
+	height:300px;
+	margin:0px;
+}
+
+.main-menu UL
+	{
+	
+		list-style:none;
+		float:left;
+		text-align:left;
+		text-transform:uppercase;
+		font-weight:bold;
+		cursor:pointer;
+		margin:0px;
+		padding:0px;
+	}
+.main-menu li
+	{
+		font-family:tahoma;
+		font-size:12px;
+		text-transform:uppercase;
+		font-weight:bold;
+		text-align:center;
+		color:#666666;
+		text-decoration:none;
+		display:block;
+	
+		border:solid 1px #CCCCCC;
+		background:url(../img/btn_bg.png) repeat-x;
+		line-height:100px;
+		height:100px;
+		vertical-align:middle;
+		width:150px;
+	}
+.main-menu a:hover
+	{
+		color: #96ce69;
+	}
+.open-GL
+	{
+		font-family:"Trebuchet MS";
+		font-size:90px;
+		color:#999999;
+		padding:10px;
+	}
+.all-rights
+	{
+		font-family:"Trebuchet MS";
+		font-size:15px;
+		color:#999999;
+		padding:10px;
+		text-align:center;
+	}
+#contentLoader
+	{
+		display:none;
+	}
+/*---------------------------start custom jquery style-----------------------------*/
+.custombox
+	{
+		margin:2px;
+		text-align:left;
+	}
+.custombox input
+	{
+		width:100px;
+		height:20px;
+		border:solid 1px #F9F9F9;
+	}
+.custombox A,IMG
+	{
+		border:0px;
+		margin:0px;
+		padding:0px;
+	}
+.selectBox
+	{
+		height:120px;
+		border:solid 1px #F9F9F9;
+		width:200px;
+		font-size:13px;
+	}
+.addbtn
+	{
+		height:30px;
+		width:70px;
+		border:outset 1px #002F00;
+		background:#AAD757;
+		color:#FFFFFF;
+		font-weight:bold;
+	}
+.removebtn
+	{
+		height:30px;
+		width:70px;
+		border:outset 1px #3C0000;
+		background:#FF9966;
+		color:#FFFFFF;
+		font-weight:bold;
+	}
+.btnLiveCode
+	{
+		height:30px;
+		width:70px;
+		border:outset 1px #002F00;
+		background:#AAD757;
+		color:#FFFFFF;
+		font-weight:bold;
+		
+	}
+/*---------------------------End custom jquery style-----------------------------*/
+#contentLoader
+	{
+		width:850px;
+		height:300px;
+		background:#FFFFFF;
+	}
+/*--------------------------start documentation-----------------------------*/
+#Html
+	{
+		color:#0000FF;
+	}
+#Html H1
+	{
+		margin:0px;
+		padding:2px;
+		border-bottom:solid 1px #F0F0F0;
+		display:block;
+		font-size:13px;
+		width:100%;
+		font-weight:normal;
+	}
+#css{
+	color:#FF33CC;
+	}
+#css H1
+	{
+		margin:0px;
+		padding:2px;
+		border-bottom:solid 1px #F0F0F0;
+		display:block;
+		font-size:13px;
+		width:100%;
+		font-weight:normal;
+	}
+#js
+{
+	color:#CE3A00
+}
+#js  H1
+	{
+		margin:0px;
+		padding:2px;
+		border-bottom:solid 1px #F0F0F0;
+		display:block;
+		font-size:13px;
+		width:100%;
+		font-weight:normal;
+	}

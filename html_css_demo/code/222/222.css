@@ -1,0 +1,95 @@
+*{
+    /* 初始化 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 定义CSS自定义变量 */
+:root{
+    /* 打开状态下圆形的颜色 */
+    --on-color:#0085ff;
+    /* 关闭状态下圆形的颜色 */
+    --off-color:#cce7ff;
+    /* 开关按钮的背景颜色 */
+    --toggle-bg:#1f3447;
+    /* 圆与边缘的间距 */
+    --toggle-gap:10px;
+    /* 开关按钮的宽度 */
+    --toggle-width:160px;
+    /* 动画过渡时的颜色 */
+    --transition-color:var(--off-color);
+}
+body{
+    /* 100%窗口宽高 */
+    min-height: 100vh;
+    /* 弹性布局 居中演示 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00182e;
+}
+.toggle{
+    position: relative;
+    cursor: pointer;
+    background: var(--toggle-bg);
+    width: var(--toggle-width);
+    height: calc(var(--toggle-width) / 2);
+    border-radius: 160px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 2px #7c7e8855;
+    -webkit-tap-highlight-color: transparent;
+}
+.toggle input{
+    /* 隐藏复选框 */
+    appearance: none;
+}
+/* 复选框选中时svg线条的过渡颜色设为打开的颜色（深蓝） */
+.toggle input:checked ~ svg .outline{
+    --transition-color: var(--on-color);
+}
+/* 开、关两个圆的统一样式 */
+.off-knob,
+.on-knob{
+    position: absolute;
+    height: calc(100% - var(--toggle-gap) * 2);
+    /* 保持宽高比为1:1 */
+    aspect-ratio: 1;
+    border-radius: 50%;
+    box-shadow: 0 1px 1px rgba(10,19,39,0.1),
+    0 4px 12px rgba(10,19,39,0.03),
+    0 4px 20px rgba(10,19,39,0.04);
+    transform-origin: center center;
+}
+/* 关的状态 */
+.off-knob{
+    left: var(--toggle-gap);
+    background: var(--off-color);
+}
+/* 开的状态 */
+.on-knob{
+    right: var(--toggle-gap);
+    background: var(--on-color);
+    transform: scale(0.1) translateX(430px);
+}
+svg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+/* 流边线条 */
+.outline{
+    width: 100%;
+    height: 100%;
+    stroke: var(--transition-color);
+    stroke-dasharray: 2 125;
+    stroke-dashoffset: 32.5;
+    stroke-opacity: 0;
+}
+/* 模糊效果 */
+.outline--blur{
+    filter: blur(0.8px);
+}

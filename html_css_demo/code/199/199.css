@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f7f7ff;
+}
+a{
+    margin: 10px;
+    text-decoration: none;
+    color: #3e7ac5;
+    position: relative;
+}
+/* 下划线（左进右出） */
+a::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    /* currentColor可以获取当前元素或父元素的color */
+    background-color: currentColor;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    /* 沿x轴缩放至隐藏 */
+    transform: scaleX(0);
+    /* 设置变换圆点为右 */
+    transform-origin: right;
+    /* 设置变换时的过渡 */
+    transition: transform 0.3s ease-out;
+}
+a:hover::after{
+    /* 沿x轴缩放至显示 */
+    transform: scaleX(1);
+    /* 设置变换圆点为左 */
+    transform-origin: left;
+}

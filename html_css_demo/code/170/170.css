@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #000;
+    overflow: hidden;
+}
+#text{
+    color: #fff;
+    font-size: 20px;
+    width: 80vw;
+    line-height: 1.5;
+    margin: 100px auto;
+}
+#btn{
+    width: 150px;
+    height: 50px;
+    border: 1px solid #fff;
+    background: #000;
+    color: #fff;
+    font-size: 20px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}

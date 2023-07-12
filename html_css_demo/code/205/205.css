@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* 100%窗口宽高 */
+    min-height: 100vh;
+    /* 弹性布局 水平+垂直居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+}
+.container{
+    color: #fff;
+    font-size: 80px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    position: relative;
+}
+.container::before{
+    content: 'hello world';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #eeea06;
+    width: 60px;
+    /* 文本不换行 */
+    white-space: nowrap;
+    /* 溢出隐藏 */
+    overflow: hidden;
+    border-right: 5px solid #eeea06;
+    /* 执行涂抹动画：动画名 时长 线性 无限播放 */
+    animation: move 5s linear infinite;
+    /* 加个发光效果 */
+    filter: drop-shadow(0 0 50px #eeea06);
+}
+
+/* 定义动画 */
+@keyframes move {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}

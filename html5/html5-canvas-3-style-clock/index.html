@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML5 Canvas 3种不同风格的圆盘时钟DEMO演示</title>
+
+<link rel="stylesheet" href="css/demo.css"/>
+
+</head>
+<body>
+<div class="wrapper clearfix show">
+	<div class="clock" id="clock"></div>
+	<div class="clock" id="clock1"></div>
+	<div class="clock" id="clock2"></div>
+</div>
+
+<script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/clock-1.1.0.min.js"></script>
+<script>
+
+	var clock = $("#clock").clock(),
+		data = clock.data('clock');
+
+	// data.pause();
+	// data.start();
+	// data.setTime(new Date());
+
+	var d = new Date();
+	d.setHours(9);
+	d.setMinutes(51);
+	d.setSeconds(20);
+
+	var clock1 = $("#clock1").clock({
+		width: 210,
+		height: 305,
+		theme: 't2',
+		date: d
+	});
+
+	var clock2 = $("#clock2").clock({
+		width: 150,
+		height: 220,
+		theme: 't3'
+	});
+
+</script>
+
+<div style="text-align:center;clear:both">
+<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+<script src="/follow.js" type="text/javascript"></script>
+</div>
+
+</body>
+</html>
