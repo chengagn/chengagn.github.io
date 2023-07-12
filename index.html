@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <title>HTML and CSS Examples</title>
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <h1>HTML CSS 特效</h1>
+      <ul class="list"></ul>
+    </div>
+  </main>
+  <script type="module" src="./shadow-root.js"></script>
+  <script src="html_css_demo/myVar.js"></script>
+  <script src="./myVar2.js"></script>
+  <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+  <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+  <!-- <script src="react.js"></script>
+  <script src="react-dom.js"></script> -->
+  <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+  <script src="index.js" type="text/babel"></script>
+  <script>
+    let arr2 = arr1.map(it => {
+      return {
+        href: it.href.replace(/\\/g, '/').replace('D:/2023study/some-css-effects', '.'),
+        text: it.text
+      }
+    })
+    setTimeout(() => {
+      console.log(arr2)
+    }, 2000)
+  </script>
+</body>
+
+</html>
