@@ -47,7 +47,7 @@ function readDirectory(callback) {
 readDirectory(() => {});
 setTimeout(() => {
   console.log(arr, 998);
-  const myVarPath = path.join(__dirname, "myVar.js");
+  const myVarPath = path.join(__dirname, "myVar3.js");
   let myVarStr = "let arr=" + JSON.stringify(arr);
   // 将字符串写入到文件中
   fs.writeFile(myVarPath, myVarStr, (err) => {

@@ -161,7 +161,18 @@ const uis = [
     text: "渐变背景过渡动画2",
   },
 ];
+arr3.forEach((e) => {
+  let a = arr1.find((it) => {
+    return it.href.includes(e.split(".")[0]);
+  });
+  console.log(a);
+  if (a) {
+    a.img = "html5/1img/" + e;
+  }
+});
+console.log(arr1);
 uis.push(...arr, ...arr1);
+console.log(uis, "uis");
 function UILists(props) {
   const uis = props.uis;
   const listItems = uis.map((ui, i) => {

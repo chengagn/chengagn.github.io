@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .chatpdf {
+      display: flex;
+      height: 100vh;
+      flex-direction: row;
+    }
+
+    .chatpdf .pannel {
+      width: 255px;
+      background-color: rgb(0, 21, 41);
+    }
+
+    .chatpdfBox {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      background: linear-gradient(to bottom right, #dbe6fb, #f3f4f8);
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    .chatpdfLine {
+      flex: 1;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      overflow-y: auto;
+    }
+
+    .chatpdfRow {
+      margin: 20px 10px;
+      display: flex;
+    }
+
+    .chatpdfAsk {
+      justify-content: flex-end;
+    }
+
+    .chatpdfContent {
+      display: inline-block;
+      border-radius: 8px;
+      padding: 6px 12px;
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.6);
+      font-size: 14px;
+      box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.12), 0px 1.6px 3.6px rgba(0, 0, 0, 0.16);
+    }
+
+    .chatpdfAsk .chatpdfContent {
+      background: linear-gradient(90deg, #2870EA 10.79%, #1B4AEF 87.08%);
+      ;
+      color: #fff;
+    }
+
+    .chatpdfArea {
+      display: flex;
+      padding: 5px 10px;
+      max-width: 1000px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .chatpdfArea textarea {
+      flex: 1;
+      border-color: #d9d9d9;
+      resize: none;
+      outline: none;
+      padding: 0px 5px;
+      height: 35px;
+      line-height: 30px;
+      color: #404040;
+      border-radius: 10px 0px 0px 10px;
+      transition: all 0.3s, height 0s;
+    }
+
+    .chatpdfArea textarea:hover {
+      border-color: #4096ff;
+    }
+
+    .chatpdfArea button {
+      height: 35px;
+      color: #fff;
+      background: linear-gradient(90deg, #2870EA 10.79%, #1B4AEF 87.08%);
+      box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
+      border: none;
+      padding: 0 20px;
+      border-radius: 0px 8px 8px 0px;
+      cursor: pointer;
+    }
+
+    .chatpdfArea button:hover {
+      background-color: #388aff;
+    }
+
+    .chatpdf .fileTitle {
+      background-color: #1677ff;
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .pannel {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="chatpdf">
+    <div class="pannel">
+      <div class="fileList">
+        <div class="fileTitle">新浪网技术(中国)有限公司.docx</div>
+        <div class="fileTitle">新浪网技术(中国)有限公司.pdf</div>
+        <div class="fileTitle">新浪网技术(中国)有限公司.xlsx</div>
+      </div>
+    </div>
+    <div class="chatpdfBox">
+      <div class="chatpdfLine">
+        <div class="chatpdfRow">
+          <div class="chatpdfContent">我是知识库机器人，一个专门响应人类指令的大模型</div>
+        </div>
+        <div class="chatpdfRow">
+          <div class="chatpdfContent">我服务于人类，致力于让生活更美好</div>
+        </div>
+        <div class="chatpdfRow">
+          <div class="chatpdfContent">我是知识库机器人，一个专门响应人类指令的大模型</div>
+        </div>
+        <div class="chatpdfRow chatpdfAsk">
+          <div class="chatpdfContent">自建私有数据知识库 · 与知识库AI聊天</div>
+        </div>
+      </div>
+      <div class="chatpdfArea">
+        <textarea></textarea>
+        <button>
+          <svg t="1682141916531" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="1271" width="16" height="16">
+            <path d="M0 1024l106.496-474.112 588.8-36.864-588.8-39.936L0 0l1024 512z" fill="#ffffff" p-id="1272"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

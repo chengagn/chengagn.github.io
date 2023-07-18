@@ -17,14 +17,17 @@
     </div>
   </main>
   <script type="module" src="./shadow-root.js"></script>
+  <!-- arr -->
   <script src="html_css_demo/myVar.js"></script>
+  <!-- arr3 -->
+  <script src="./myVar3.js"></script>
+  <!-- arr1 -->
   <script src="./myVar2.js"></script>
   <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
   <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
   <!-- <script src="react.js"></script>
   <script src="react-dom.js"></script> -->
   <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
-  <script src="index.js" type="text/babel"></script>
   <script>
     let arr2 = arr1.map(it => {
       return {
@@ -32,10 +35,9 @@
         text: it.text
       }
     })
-    setTimeout(() => {
-      console.log(arr2)
-    }, 2000)
+    setTimeout(() => {}, 2000)
   </script>
+  <script src="index.js" type="text/babel"></script>
 </body>
 
 </html>
