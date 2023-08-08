@@ -11,7 +11,7 @@
 **/node_modules/
 .DS_Store
 html2/
-#dist/
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -124,7 +124,7 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+
 
 # Gatsby files
 .cache/
