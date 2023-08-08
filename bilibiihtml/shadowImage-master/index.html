@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <input id="ipt" type="file" />
+  <button id="btn">点击导出html</button>
+  <script>
+    const fileDom = document.getElementById('ipt')
+    const btn = document.getElementById('btn')
+    btn.onclick = output
+    async function output() {
+      const img = await loadImg()
+      if (!img) {
+        return
+      }
+      const html = createHtml(img)
+      download(html)
+    }
+
+    function loadImg() {
+      const file = fileDom.files[0]
+      if (!file) {
+        return null
+      }
+      const url = URL.createObjectURL(file)
+      const img = new Image()
+      return new Promise((resolve, reject) => {
+        img.onload = () => {
+          resolve(img)
+        }
+        img.onerror = () => {
+          reject(null)
+        }
+        img.src = url
+      })
+    }
+
+    function createHtml(img) {
+      const cvs = document.createElement('canvas')
+      const ctx = cvs.getContext('2d')
+      const {
+        width,
+        height
+      } = img
+      cvs.width = width
+      cvs.height = height
+      ctx.drawImage(img, 0, 0)
+      const data = ctx.getImageData(0, 0, width, height).data
+      const bmp = []
+      for (let c = 0; c < height; c++) {
+        for (let w = 0; w < width; w++) {
+          const i = c * width + w
+          const R = data[i * 4]
+          const G = data[i * 4 + 1]
+          const B = data[i * 4 + 2]
+          const A = data[i * 4 + 3] / 255
+          // bmp.push(`${w}px ${c}px rgba(${255 - R},${255 - G},${255 - B},${A})`)
+          bmp.push(`${w}px ${c}px rgba(${R},${G},${B},${A})`)
+        }
+      }
+      return `<html lang="en">
+            <head>
+              <meta charset="utf-8" />
+              <title>shadowImage</title>  
+              <style>
+                body {
+                  margin: 0;
+                  padding: 0;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  min-height: 100vh;
+                }
+                .img-shadow {
+                  width: ${width}px;
+                  height: ${height}px;
+                }
+                .inner {
+                  width: 1px;
+                  height: 1px;
+                  box-shadow: ${bmp.join(',')};
+                }
+              </style>  
+            </head>
+            <body>
+              <div class="img-shadow">
+                <div class="inner"></div>  
+              </div>  
+            </body>
+          </html>`
+    }
+
+    function download(html) {
+      const url = URL.createObjectURL(new Blob([html]))
+      const a = document.createElement('a')
+      a.href = url
+      a.download = 'shadowImage.html'
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+    }
+  </script>
+</body>
+
+</html>

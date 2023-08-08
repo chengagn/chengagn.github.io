@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>无限分裂盒子</title>
+  <style>
+    .box {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background-color: #ccc;
+      border: 1px solid #000;
+      overflow: hidden;
+    }
+
+    /* .box .split-line {
+      position: absolute;
+      width: calc(100% - 2px);
+      height: 1px;
+      background-color: #000;
+      left: 1px;
+      top: 50%;
+      transform: translateY(-50%);
+    } */
+    #box {
+      width: 400px;
+      height: 400px;
+      border: 1px solid black;
+    }
+
+    .split {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .split>div {
+      width: calc(50% - 1px);
+      height: calc(50% - 1px);
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box" onclick="splitBox(this)"></div>
+  <div id="container">
+    <div class="box"></div>
+  </div>
+  <div id="box" onclick="splitBox(this)"></div>
+  <script>
+    var container = document.getElementById("container");
+    container.addEventListener("click", function () {
+      var box = document.createElement("div");
+      box.classList.add("box");
+      var subBox1 = document.createElement("div");
+      subBox1.classList.add("box");
+      var subBox2 = document.createElement("div");
+      subBox2.classList.add("box");
+      container.appendChild(subBox1);
+      container.appendChild(subBox2);
+    });
+
+    function splitBox(element) {
+      element.classList.add('split');
+      var childBoxes = element.querySelectorAll('div');
+      if (childBoxes.length === 0) {
+        for (var i = 0; i < 4; i++) {
+          var newBox = document.createElement('div');
+          element.appendChild(newBox);
+        }
+      } else {
+        for (var i = 0; i < childBoxes.length; i++) {
+          splitBox(childBoxes[i]);
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
