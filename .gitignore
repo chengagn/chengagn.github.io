@@ -11,7 +11,7 @@
 **/node_modules/
 .DS_Store
 html2/
-dist/
+#dist/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
