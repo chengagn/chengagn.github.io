@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Google 登录示例</title>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id"
+    content="687140080166-1m71g0vkukjp30u90fvs4je4kpfsounv.apps.googleusercontent.com">
+</head>
+
+<body>
+  <h1>Google 登录示例</h1>
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <script>
+    function onSignIn(googleUser) {
+      // 获取用户信息
+      const profile = googleUser.getBasicProfile()
+      const idToken = googleUser.getAuthResponse().id_token
+      const accessToken = googleUser.getAuthResponse().access_token
+      // 在此处处理用户信息，例如将其发送到服务器进行验证或在页面上显示欢迎消息。
+      console.log('欢迎 ' + profile.getName())
+    }
+  </script>
+</body>
+
+</html>
