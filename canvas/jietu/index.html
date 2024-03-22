@@ -1,0 +1,34 @@
+<!--
+ * @Author: your name
+ * @Date: 2024-03-08 15:25:43
+ * @LastEditTime: 2024-03-08 15:31:54
+ * @LastEditors: DESKTOP-7668TQ0
+ * @Description: In User Settings Edit
+ * @FilePath: \study26\canvas.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
+</head>
+<body>
+    <div id="testId">12314</div>
+    <button id="screenshot-btn">截图</button>
+    <script type="text/javascript">
+        	document.getElementById('screenshot-btn').addEventListener('click', function() {
+		  html2canvas(document.getElementById('testId')).then(function(canvas) {
+		    // 创建一个新的Image对象
+		    var image = new Image();
+		    image.src = canvas.toDataURL('image/png');
+		
+		    // 在页面上显示截图结果
+		    document.body.appendChild(image);
+		  });
+		});
+    </script>
+</body>
+</html>
