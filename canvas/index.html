@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas ></canvas>
+</body>
+<script>
+    const cvs = document.querySelector("canvas");
+    const ctx = cvs.getContext("2d", {
+        willReadFrequently: true
+    });
+    let originalImageData; // 用于存储原始图像数据
+    
+
+    function init(){
+        const img = new Image();
+        img.src = './test2.jpg';
+        img.onload = () => {
+            cvs.width = img.width;
+            cvs.height = img.height;
+            ctx.drawImage(img, 0, 0);
+            // 在加载图像后保存原始图像数据
+            originalImageData = ctx.getImageData(0, 0, cvs.width, cvs.height);
+        }
+    }
+    init();
+    cvs.addEventListener('click', e=>{
+        // console.log(e)
+        const x = e.offsetX;
+        const y = e.offsetY;
+        if (!originalImageData) {
+            console.error("原始图像数据未初始化！");
+            return;
+        }
+         // 恢复原始图像数据
+        ctx.putImageData(originalImageData, 0, 0);
+        // 取出点击位置的像素点颜色
+        const imgData = ctx.getImageData(0, 0, cvs.width, cvs.height);
+        const clickColor = getColor(x, y, imgData);
+        const greenColor = [0, 255, 0, 255];
+
+        const stack = [{ x, y }];
+        while (stack.length > 0) {
+            const { x, y } = stack.pop();
+            
+            if (x < 0 || x >= cvs.width || y < 0 || y >= cvs.height) {
+                continue;
+            }
+            
+            const i = point2Index(x, y);
+            const color = getColor(x, y, imgData);
+            
+            if (diff(color, clickColor) <= 100 && diff(color, greenColor) !== 0) {
+                imgData.data.set(greenColor, i);
+                
+                stack.push({ x: x + 1, y });
+                stack.push({ x: x - 1, y });
+                stack.push({ x, y: y + 1 });
+                stack.push({ x, y: y - 1 });
+            }
+        }
+        ctx.putImageData(imgData, 0, 0);
+        
+    })
+    function point2Index(x, y){
+        return ( y * cvs.width + x ) * 4;
+    }
+    function getColor(x, y, imageData){
+        const i = point2Index(x, y);
+        return [
+            imageData.data[i],
+            imageData.data[i+1],
+            imageData.data[i+2],
+            imageData.data[i+3],
+        ];
+    }
+    function diff(color1, color2){
+        const res = Math.abs(color1[0] - color2[0]) +
+            Math.abs(color1[1] - color2[1]) + 
+            Math.abs(color1[2] - color2[2]) + 
+            Math.abs(color1[3] - color2[3]);
+        return res;
+    }
+</script>
+</html>
